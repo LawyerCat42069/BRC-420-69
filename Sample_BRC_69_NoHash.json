@@ -37,9 +37,9 @@ def extract_metadata_to_json(image_path, output_path):
 
 # Metadata to be encrypted in the image
 metadata_dict = {
-    "Token Designation": "BRC-42",
-    "Satoshi Number": "UNKNOWN",
-    "Parent Satoshi Number": "NONE-PROVENANCE QUESTIONABLE",
+    "Token Designation": "BRC-69",
+    "Satoshi Number": "XXXXXXXXXXXXXXXX",
+    "Parent Satoshi Number": "XXXXXXXXXXXXXXXX",
     "Collection Name": "Name",
     "Collection Size": "XXXX",
     "Collection Number": "XXXX/XXXX",
@@ -55,15 +55,4 @@ metadata_dict = {
 
 # Convert the dictionary to a JSON string
 metadata = json.dumps(metadata_dict)
-
-# Example usage
-base64_string = """
-<Your_Base64_String_Here>
-""".strip()
-
-output_path = "output_image.bmp"
-decode_base64_to_image(base64_string, output_path, metadata)
-
-image_path = "output_image.bmp"
-json_output_path = "metadata.json"
-extract_metadata_to_json(image_path, json_output_path)
+ 
