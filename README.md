@@ -51,6 +51,7 @@ metadata_dict = {
 
     "Held": "Futuristic Laser Gun"
 }
+    
 Please ensure you have installed all necessary Python libraries before running the script.
 
 Dependencies
