@@ -18,22 +18,38 @@ Replace <Your_Base64_String_Here> with your actual base64 string that encodes an
 Example:
 
 python
+    
 Copy code
+    
 metadata_dict = {
+    
     "Token Designation": "BRC-69",
+    
     "Satoshi Number": "1234567887654321",
+    
     "Parent Satoshi Number": "8765432112345678",
+    
     "Collection Name": "My Collection",
+    
     "Collection Size": "50",
+    
     "Collection Number": "1/50",
+    
     "Background": "Blue",
-    "Body": "Trait value 1",
-    "Face": "Trait value 2",
-    "Head": "Trait value 3",
-    "Neck": "Trait value 4",
-    "Waist": "Trait value 5",
-    "Back": "Trait value 6",
-    "Held": "Trait value 7"
+    
+    "Body": "Warrior",
+    
+    "Face": "Happy",
+    
+    "Head": "Centurion Helm",
+    
+    "Neck": "None",
+
+    "Waist": "Grenade Belt",
+
+    "Back": "Jetpack",
+
+    "Held": "Futuristic Laser Gun"
 }
 Please ensure you have installed all necessary Python libraries before running the script.
 
