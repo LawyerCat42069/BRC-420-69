@@ -2,10 +2,7 @@
 
 BRC-69 is a new standard for Ordinal Inscriptions on the Bitcoin blockchain. This Python script provides a method of cryptographically storing an image with embedded metadata on the Bitcoin blockchain as a Bitcoin ordinal.
 
-The overall scheme involves a parent inscription that contains a JSON file. This JSON file indexes all of the child scripts by their Satoshi number and describes all of their metadata. The child inscription is a python script containing the image stored as a base64 hash along with metadata embedded via steganography.
-
-How it Works
-The script performs the following operations:
+The overall scheme involves a parent inscription that contains a JSON file. This JSON file indexes all of the child scripts by their Satoshi number and describes all of their metadata. The child inscription is a python script containing the image stored as a base64 hash along with metadata embedded via steganography.  The script performs the following operations:
 
 Decodes a base64 string to an image.
 Embeds metadata into the image using steganography.
