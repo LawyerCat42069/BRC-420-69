@@ -1,0 +1,33 @@
+import os
+import base64
+from bson import BSON
+
+os.chdir('C:\\Bitcoin\\Ordinals\\BRC-69')
+
+# Your original metadata
+metadata_dict = {
+    "Token Designation": "BRC-69",
+    "Satoshi Number": "XXXXXXXXXXXXXXXX",
+    "Parent Satoshi Number": "UNKNOWN - PROVENANCE QUESTIONABLE",
+    "Collection Name": "Collection Name",
+    "Collection Size": "10",
+    "Collection Number": "1 of 10",
+    "Background": "Color", 
+    "<Next Trait>": "<Trait Name>",	
+}
+
+# Convert the metadata to BSON
+bson_data = BSON.encode(metadata_dict)
+
+dir_path = r'C:\\Bitcoin\\Ordinals\\BRC-69'
+os.makedirs(dir_path, exist_ok=True)  # creates the directory if it doesn't exist
+
+try:
+    with open(os.path.join(dir_path, 'BTCPM1.bson'), 'wb') as f:
+        f.write(bson_data)  # Removed comma at the end
+except Exception as e:
+    print("Error while writing file:", e)
+
+bson_base64 = base64.b64encode(bson_data)
+
+print(bson_base64)
