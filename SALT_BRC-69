@@ -1,15 +1,22 @@
 import hashlib
+import base64
+import os
 
-BRC_69 = "STRING"
-BRC_69_MD = "STRING"
+# Set the current directory
+directory = 'C:\\Bitcoin\\Ordinals\\BRC-69'
+os.chdir(directory)
 
-# Define the salt value
-salt = "SALT_VALUE"
+salt = "Salt6969420741!"
+data1 = "base64_string" + salt
 
-# Concatenate the values and salt
-data = BRC_69 + BRC_69_MD + salt
+data2 = "base64_string" + salt
 
-# Generate the hash
-hash_value = hashlib.sha256(data.encode('utf-8')).hexdigest()
+hash_value1 = hashlib.sha256(data1.encode('utf-8')).digest()
+hash_value2 = hashlib.sha256(data2.encode('utf-8')).digest()
 
-print("Salted Hash:", hash_value)
+with open('hashfilename.txt', 'w') as file:
+    file.write(f'Hash Value 1: {hash_value1.hex()}\n')
+    file.write(f'Hash Value 2: {hash_value2.hex()}\n')
+
+# Confirmation message
+print("Hash values have been written to the file 'hash_values.txt'.")
