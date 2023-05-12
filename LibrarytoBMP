@@ -1,6 +1,8 @@
 import os
 import base64
 import json
+import argparse
+
 def main():
     print("Hello World!")
 
@@ -29,7 +31,7 @@ def save_base64_json(base64_data, folder_path):
 
 def main():
     # Provide the folder path containing the BMP images
-    folder_path = '/path/to/folder'
+    folder_path = '/path/to/folder' --arg2=filepath
 
     # Convert images to Base64 and create the JSON data
     base64_data = folder_to_base64_json(folder_path)
