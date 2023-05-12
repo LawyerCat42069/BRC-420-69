@@ -1,0 +1,41 @@
+from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
+from cryptography.hazmat.primitives import hashes
+import base64
+
+# Generate a new RSA key pair
+private_key = rsa.generate_private_key(
+    public_exponent=65537,
+    key_size=2048
+)
+
+public_key = private_key.public_key()
+
+# Your base64 strings
+base64_str1 = b"Base64 String 1"
+base64_str2 = b"Base64 String 2"
+
+# Encrypt the base64 strings
+encrypted_str1 = public_key.encrypt(
+    base64_str1,
+    padding.OAEP(
+        mgf=padding.MGF1(algorithm=hashes.SHA256()),
+        algorithm=hashes.SHA256(),
+        label=None
+    )
+)
+
+encrypted_str2 = public_key.encrypt(
+    base64_str2,
+    padding.OAEP(
+        mgf=padding.MGF1(algorithm=hashes.SHA256()),
+        algorithm=hashes.SHA256(),
+        label=None
+    )
+)
+
+# Write the encrypted strings to a file
+with open('encrypted_strings.txt', 'wb') as f:
+    f.write(encrypted_str1)
+    f.write(b'\n')
+    f.write(encrypted_str2)
