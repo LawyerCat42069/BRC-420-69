@@ -22,7 +22,7 @@ Decodes the base64 strings into an image and metadata.
 Embeds metadata into the image using steganography.
 Saves the resulting image. 
 Writes the extracted metadata to a JSON file. 
-Steganographically embeds the metadata into the image. 
+Steganographically embeds the metadata into the image. Saves that output. 
   
 
 Dependencies
