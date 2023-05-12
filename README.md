@@ -1,8 +1,8 @@
 **BRC-420-69 Ordinal Inscriptions**
 
-BRC-69 is a new standard for Ordinal Inscriptions on the Bitcoin blockchain. This Python script provides a method of cryptographically storing an image with embedded metadata on the Bitcoin blockchain as a Bitcoin ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated with the image  - ensuring long term provenance.
+BRC-69 is a new standard for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing an image with embedded metadata on the Bitcoin blockchain as a Bitcoin ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated with the image - ensuring long term provenance.
 
-The overall scheme involves a parent inscription (BRC-420) that contains a salt-encrypted JSON file. This JSON file indexes all of the child scripts by their Satoshi number and describes all of their metadata. The child inscription consists of two SHA 256 hashes - one for the image and one for the metadata. With the Salt key you can decrypt the hashes, which provides you with two base 64 strings: one encoded bitmap image and one BSON containing metadata.  
+The overall scheme involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child scripts by their Satoshi number and describes all of their metadata. The child inscription (BRC-69) consists of two SHA 256 hashes - one for the image and one for the metadata. With the AES key you can decrypt the hashes, which provides you with two base 64 strings: one encoded bitmap image and one BSON containing metadata. This can be further decoded into a single image with embedded metadata. 
 
 Steps:
 
