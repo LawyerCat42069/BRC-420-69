@@ -6,11 +6,14 @@ The overall scheme involves a parent inscription (BRC-420) that contains a salt-
 
 Steps:
 Assemble Parent (BRC-420) Collection JSON with all desired metadata. Identify satoshis of parent and child inscriptions and include that information in the metadata of each.  
-Next you will need to convert your desired visual output into a bitmap, and from there convert it into a base64 string. Then, you will need to convert the metadata into a BSON that is then converted into a separate base64 string.  
+Next you will need to convert your desired visual output into a bitmap, and from there convert it into a base64 string. 
+Then, you will need to convert the metadata into a BSON that is then converted into a separate base64 string.   
+
+Then using BRC69_EncryptStrings, you encrypt the base64 into two AES hashes using AES encryption. 
 
 The BRC-69 Omni Decode + Embed Function does this:
 
-Uses the salt key to decrypt the two hashes. 
+Uses the AES key to decrypt the two hashes. 
 Decodes the base64 strings into an image and metadata.
 Embeds metadata into the image using steganography.
 Saves the resulting image.
