@@ -29,10 +29,15 @@ Dependencies
 This script depends on the following Python libraries:
 
 base64
+
 json
+
 PIL (Pillow)
+
 io
+
 stegano
+
 cryptography
 
 
