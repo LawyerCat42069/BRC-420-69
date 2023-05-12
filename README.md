@@ -39,6 +39,8 @@ This script depends on the following Python libraries:
   stegano
 
   cryptography
+  
+  argparse
 
 
 Conclusion
