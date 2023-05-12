@@ -8,7 +8,7 @@ Steps:
 
 1. Assemble Parent (BRC-420) Collection JSON with all desired metadata. Identify satoshis of parent and child inscriptions using a satoshi indexer and include that information in the metadata of each.  
 2. Next you will need to convert your desired visual output into a bitmap, and from there convert it into a base64 string. You can do this using the LibrarytoBMP script for all files in the chosen directory. 
-3. Then, you will need to convert the metadata into a BSON that is then converted into a separate base64 string.  You can do this using Metadata_BSON_Convert.  
+3. Then, you will need to convert the metadata into a BSON that is then converted into a separate base64 string.  You can do this using Metadata_Convert.  
 4. Then using BRC69_EncryptStrings, you encrypt the base64 into two AES hashes using AES encryption. OrdinalMaker will take a designated JSON containing metadata alongside the JSON containing the base64 data for the images, and encrypt as a two separate hashes using AES encryption, writing them into a separate table. 
 5. The paired AES hashes are your BRC-69 Ordinals. Inscribe all of your BRC-69 ordinals as strings using the format found in SampleBRC-69Ordinal. 
 6. Incribe parent JSON file containing AES key and all metadata when you are ready to reveal the collection. 
@@ -41,7 +41,8 @@ This script depends on the following Python libraries:
   cryptography
   
   argparse
-
+  
+  panda
 
 Conclusion
 
