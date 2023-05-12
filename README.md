@@ -54,7 +54,7 @@ Metadata is first converted to binary using Metadata-BinaryConvert.py then decod
     
 Please ensure you have installed all necessary Python libraries before running the script.
 
-Make sure the BRC-69.py file is located in the same directory as your main script (main.py or whatever the filename is). Adjust the path in the loader line if necessary.
+Make sure the BRC-69.py file is located in the same directory as your decoder script (main.py or whatever the filename is). Adjust the path in the loader line if necessary.
 
 Dependencies
 This script depends on the following Python libraries:
