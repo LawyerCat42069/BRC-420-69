@@ -9,9 +9,9 @@ Decodes a base64 string to an image.
 Embeds metadata into the image using steganography.
 Saves the resulting image.
 Extracts the metadata from the image.
-Writes the extracted metadata to a JSON file.
-Usage
-Replace <Your_Base64_String_Here> with your actual base64 string that encodes an image. In the metadata_dict, replace <value> and <totalsize> with your actual metadata values. The metadata must be in valid JSON format.
+Writes the extracted metadata to a JSON file. 
+
+Usage: Replace <Your_Base64_String_Here> with your actual base64 string that encodes an image. In the metadata_dict, replace <value> and <totalsize> with your actual metadata values. The metadata must be in valid JSON format.
 
 Example:
 
