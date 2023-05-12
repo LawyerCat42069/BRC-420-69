@@ -49,6 +49,8 @@ metadata_dict = {
 
     "Held": "Futuristic Laser Gun"
 }
+
+Metadata is first converted to binary using Metadata-BinaryConvert.py then decoded upon execution. 
     
 Please ensure you have installed all necessary Python libraries before running the script.
 
