@@ -1,0 +1,15 @@
+import hashlib
+
+BRC_69 = "STRING"
+BRC_69_MD = "STRING"
+
+# Define the salt value
+salt = "SALT_VALUE"
+
+# Concatenate the values and salt
+data = BRC_69 + BRC_69_MD + salt
+
+# Generate the hash
+hash_value = hashlib.sha256(data.encode('utf-8')).hexdigest()
+
+print("Salted Hash:", hash_value)
