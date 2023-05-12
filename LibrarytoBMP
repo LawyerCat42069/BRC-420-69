@@ -39,5 +39,16 @@ def main():
     # Save the Base64 data as JSON in the same folder
     save_base64_json(base64_data, folder_path)
 
-if __name__ == '__main__':
-    main()
+if name == 'main':
+    parser = argparse.ArgumentParser(description='Create an Ordinal')
+    parser.add_argument('--path', metavar='path', required=True, help='path to file')
+    args = parser.parse_args()
+    main(args.path)
+
+
+def main(folder_path):
+    # Convert images to Base64 and create the JSON data
+    base64_data = folder_to_base64_json(folder_path)
+
+    # Save the Base64 data as JSON in the same folder
+    save_base64_json(base64_data, folder_path)
