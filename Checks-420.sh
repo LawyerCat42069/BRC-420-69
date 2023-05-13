@@ -1,4 +1,5 @@
 #!/bin/bash
+#this script checks the child satoshi metadata against the parent satoshi to verify authenticity of the inscriptions
 
 # Read the data from the source file
 SOURCE_FILE="source.json"
