@@ -7,6 +7,7 @@ The protocol involves a parent inscription (BRC-420) that contains a public JSON
 
 The child inscription (BRC-69) consists of two SHA 256 hashes - one for the image and one for the metadata. With the AES key you can decrypt the hashes, which provides you with two base 64 strings: one base64 encoded bitmap image and one base64 encoded JSON containing base64 metadata. This can be further decoded into a single image with embedded metadatausing the OmniDecode+Embed.py. 
 
+The delayed reveal function allows for fair minting of ordinals to happen entirely on the Bitcoin blockchain. 
 
 Once inscribed, the parent inscription must remain in the intitial inscribing wallet, or be sent to Satoshi's wallet to "renounce" the collection. This BRC-420 incription can be inscribed in an encrypted manner as well, to allow for less decentralized but more private decryption, or could even remain uninscribed to maintain more secrecy of the underlying inscription data (uninscribed "orphan" ordinals would also be appropriate for individual items not part of a collection). The privacy implications could be significant for any types of document that an individual might want inscribed onto the blockchain without it being publicly visible or known. 
 
