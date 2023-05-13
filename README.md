@@ -1,5 +1,7 @@
 **BRC-420-69 Ordinal Inscriptions**
 
+UNDER CONSTRUCTION - REEVALUATING COMPRESSION AND ENCRTYPTION METHODS
+
 What if our Ordinals looked like this:
 
     BRC-69
