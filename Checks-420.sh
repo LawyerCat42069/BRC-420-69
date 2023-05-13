@@ -7,6 +7,17 @@ CHILD_SATOSHI_NUMBER=$(jq -r '.childSatoshiNumber' "$SOURCE_FILE")
 FILE_CIPHER=$(jq -r '.fileCipher' "$SOURCE_FILE")
 METADATA_CIPHER=$(jq -r '.metadataCipher' "$SOURCE_FILE")
 
+# Function to prompt for the output directory
+prompt_for_output_directory() {
+    echo "Enter the output directory path:"
+    read -r OUTPUT_DIRECTORY
+
+    # Check if the directory exists
+    if [[ ! -d "$OUTPUT_DIRECTORY" ]]; then
+        echo "Output directory does not exist. Please enter a valid directory."
+        prompt_for_output_directory
+    fi
+}
 # Function to prompt for the encryption key
 prompt_for_encryption_key() {
     echo "Enter the encryption key:"
@@ -85,3 +96,23 @@ CHILD_SATOSHI_NUMBER_PARENT_DATA=$(echo "$PARENT_DATA" | jq -r '.childSatoshiNum
 if [[ "$CHILD_SATOSHI_NUMBER_PARENT_DATA" != "$CHILD_SATOSHI_NUMBER" ]]; then
     echo "Could not verify BRC 420/69 pairing."
 fi
+            # Save the decrypted File Cipher to different file types based on the content
+            if echo "$DECRYPTED_FILE_CIPHER" | grep -qi "PDF"; then
+                echo "$DECRYPTED_FILE_CIPHER" > decrypted.pdf
+                echo "Decrypted File Cipher saved as decrypted.pdf"
+            elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "PNG"; then
+                echo "$DECRYPTED_FILE_CIPHER" > decrypted.png
+                echo "Decrypted File Cipher saved as decrypted.png"
+            elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "TXT"; then
+                echo "$DECRYPTED_FILE_CIPHER" > decrypted.txt
+                echo "Decrypted File Cipher saved as decrypted.txt"
+            elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "HTML"; then
+                echo "$DECRYPTED_FILE_CIPHER" > decrypted.html
+                echo "Decrypted File Cipher saved as decrypted.html"
+            elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "BMP"; then
+                echo "$DECRYPTED_FILE_CIPHER" > decrypted.bmp
+                echo "Decrypted File Cipher saved as decrypted.bmp"
+            elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "^[A-Za-z0-9+/]*={0,2}$"; then
+                DECODED_BASE64=$(echo "$DECRYPTED_FILE_CIPHER" | base64 -d)
+                echo "Decoded Base64:"
+                echo "$DECODED_BASE64"
