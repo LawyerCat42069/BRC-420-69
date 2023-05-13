@@ -8,7 +8,7 @@ Parent Satoshi Number: XXXXXXXXXXXXXXXXX
 Hash Value 1: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
 Hash Value 2: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
 
-And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal. And validate provenance and metadata by referencing the same ordinal.       Truly decentralized marketplace protocols with on-chain indexing.   
+And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal, with an output consisting of an image with embedded metadata; and then validate provenance and metadata by referencing the same ordinal. Truly decentralized marketplace protocols with on-chain indexing.   
 
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing an image with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection infromation and metadata.
 
