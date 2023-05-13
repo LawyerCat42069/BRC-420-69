@@ -61,6 +61,8 @@ Conclusion
 
 The BRC-69 standard provides a robust method for taking image collections with associated metadata and inscribing them on the Bitcoin blockchain in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain.
 
+
+
 License
 This project is licensed under the terms of the MIT license.
 
