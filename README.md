@@ -10,8 +10,8 @@ What if our Ordinals looked like this:
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
     Parent Token Designation: BRC-420  
-    Image Cipher: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
-    Metadata Cipher: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
+    Image Cipher: Encrypted [base^exponent+integer]
+    Metadata Cipher: Encrypted [base^exponent+integer]
 
 
 And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal, with an output consisting of an image with embedded metadata; and then validate provenance and metadata by referencing the same parent ordinal. Truly decentralized marketplace protocols with on-chain indexing.   
