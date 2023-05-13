@@ -2,7 +2,7 @@
 
 What if our Ordinals looked like this:
 
-    BRC-420
+    BRC-69
     Collection Name
     Item No. / Collection Size
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
