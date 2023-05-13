@@ -65,5 +65,3 @@ FOR ORDICORD COMPETITTION: ONLY SOME OF THESE PIECES ARE CURRENTLY WORKING AND N
 
 License
 This project is licensed under the terms of the MIT license.
-
-Please adjust the README as necessary based on your actual project details, licensing, usage instructions, and any additional information that you think will be helpful for users of your project.
