@@ -2,13 +2,11 @@
 
 What if our Ordinals looked like this:
 
-BRC-420
-Collection Name
-Parent Satoshi Number: XXXXXXXXXXXXXXXXX
-
-Hash Value 1: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
-
-Hash Value 2: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
+    BRC-420
+    Collection Name
+    Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+    Hash Value 1: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
+    Hash Value 2: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
 
 
 And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal, with an output consisting of an image with embedded metadata; and then validate provenance and metadata by referencing the same ordinal. Truly decentralized marketplace protocols with on-chain indexing.   
