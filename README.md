@@ -14,7 +14,7 @@ Using cryptography as the basis for the inscribed ordinal is significant because
 
 CRYPTOGRAPHY IS, ALWAYS HAS BEEN, AND ALWAYS WILL BE THE ANSWER. 
 
-Disadvantages to this standard, especially currently, is that it's a lot of work to get all of the pieces of a collection together. I'm working on the tools for that. I would like to get to the point where anyone can take an image library and properly formatted JSON + metadata table,  
+Disadvantages to this standard, especially currently, is that it's a lot of work to get all of the pieces of a collection together. I'm working on the tools for that. I would like to get to the point where anyone with the script can take an image library and properly formatted JSON + metadata table in a folder, aim a bash command at the folder, and get their collection hashes automatically. I believe the inscription of those hashes could be further automated but that is beyond my skill...I think. I look forward to seeing what others have to say/think about these ideas.    
 
 Steps:
 
