@@ -10,6 +10,7 @@ Hash Value 1: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
 
 Hash Value 2: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
 
+
 And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal, with an output consisting of an image with embedded metadata; and then validate provenance and metadata by referencing the same ordinal. Truly decentralized marketplace protocols with on-chain indexing.   
 
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing an image with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection infromation and metadata.
@@ -49,8 +50,7 @@ Saves the resulting image.
 Writes the extracted metadata to a JSON file. 
 Steganographically embeds the metadata into the image. Saves that output.  
 Dependencies
-This script depends on the following Python libraries:
-
+This script depends on the following Python libraries: 
   base64, 
   json, 
   PIL (Pillow), 
@@ -62,12 +62,8 @@ This script depends on the following Python libraries:
 
 **Conclusion**
 
-The BRC-69 standard provides a robust method for taking image collections with associated metadata and inscribing them on the Bitcoin blockchain in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain.
-
+The BRC-69 standard provides a robust method for taking image collections with associated metadata and inscribing them on the Bitcoin blockchain in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. 
 FOR ORDICORD COMPETITTION: ONLY SOME OF THESE PIECES ARE CURRENTLY WORKING AND NOT ALL OF THEM WILL END UP BEING PART OF THE FINAL PRODUCT. PLEASE FOCUS ON THIS DOCUMENT TO JUDGE MY PROJECT BUT FEE FREE TO TRY THEM. 
 
-
-License
-
-
+License:  
 This project is licensed under CC0, do whatever you want.
