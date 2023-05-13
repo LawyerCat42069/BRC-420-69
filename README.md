@@ -63,5 +63,7 @@ The BRC-69 standard provides a robust method for taking image collections with a
 
 FOR ORDICORD COMPETITTION: ONLY SOME OF THESE PIECES ARE CURRENTLY WORKING AND NOT ALL OF THEM WILL END UP BEING PART OF THE FINAL PRODUCT. PLEASE FOCUS ON THIS DOCUMENT TO JUDGE MY PROJECT BUT FEE FREE TO TRY THEM. 
 
+
 License
+
 This project is licensed under the terms of the MIT license.
