@@ -55,7 +55,7 @@ This script depends on the following Python libraries:
   
   argparse
   
-  panda
+  pandas
 
 Conclusion
 
