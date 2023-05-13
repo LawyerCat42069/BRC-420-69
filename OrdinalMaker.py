@@ -8,7 +8,8 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 
-# This script creates a table of paired hashes that can be inscribed as BRC-69 Ordinals using an input of a JSON folder containing metadata and  
+# This script creates a table of paired hashes that can be inscribed as BRC-69 Ordinals using an input of a JSON folder containing metadata and another JSON folder containing base64 encoded Bitmap images. 
+   
 def image_to_base64(image_path):
     with open(image_path, 'rb') as image_file:
         image_bytes = image_file.read()
