@@ -92,6 +92,17 @@ echo "$PARENT_DATA"
 # Extract the child Satoshi number from the Parent Data column
 CHILD_SATOSHI_NUMBER_PARENT_DATA=$(echo "$PARENT_DATA" | jq -r '.childSatoshiNumber')
 
+# Check if the decrypted File Cipher is in Base64 format
+            if echo "$DECRYPTED_FILE_CIPHER" | grep -qi "^[A-Za-z0-9+/]*={0,2}$"; then
+            
+                # Run the BRC-69_ImageCheck Python script on the decoded File Cipher
+                python BRC-69_ImageCheck.py "$TEMP_FILE"; then
+                
+                # Decode the File Cipher from Base64
+                DECODED_FILE_CIPHER=$(echo "$DECRYPTED_FILE_CIPHER" | base64 -d)
+                echo "Decoded File Cipher:"
+                echo "$DECODED_FILE_CIPHER"; then
+ 
 # Compare the child Satoshi number from Parent Data with the one from the source JSON
 if [[ "$CHILD_SATOSHI_NUMBER_PARENT_DATA" != "$CHILD_SATOSHI_NUMBER" ]]; then
     echo "Could not verify BRC 420/69 pairing."
@@ -112,7 +123,4 @@ fi
             elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "BMP"; then
                 echo "$DECRYPTED_FILE_CIPHER" > decrypted.bmp
                 echo "Decrypted File Cipher saved as decrypted.bmp"
-            elif echo "$DECRYPTED_FILE_CIPHER" | grep -qi "^[A-Za-z0-9+/]*={0,2}$"; then
-                DECODED_BASE64=$(echo "$DECRYPTED_FILE_CIPHER" | base64 -d)
-                echo "Decoded Base64:"
-                echo "$DECODED_BASE64"
+        
