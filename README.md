@@ -43,7 +43,7 @@ Steps:
 6. The paired AES hashes are your BRC-69 Ordinals. Inscribe all of your BRC-69 ordinals as strings using the format found in SampleBRC-69Ordinal. 
 7. Incribe parent JSON file containing AES key and all metadata when you are ready to reveal the collection. 
 8. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet. 
-9. Marketplaces, apps, websites, wallets and other readers will utilize BRC-69Decode+Embed to decode the AES hashes of individual ordinals using the (now public) key in a fully decentralized and permissionless way. [THIS IS NOT FUNCTIONAL YET!]
+9. Marketplaces, apps, websites, wallets and other readers will utilize BRC-69Decode+Embed to decode the AES hashes of individual ordinals using the (now public) key in a fully decentralized and permissionless way. [THIS IS NOT FUNCTIONAL YET!] The decoding script ideally long term will be written to process mutliple file types, but if it processes applications it must check them against an BRC-420 containing an approved list of secure dApp ordinals before executing any script. Ideally that list is managed via largely distributed multisignature. If the file does not match the list in the BRC-420 metadata then the decoder app should immediately delete the file and self-terminate, requiring the end user to re-instigate the app. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. 
 
 The BRC-69 Omni Decode + Embed Function does this:
 
