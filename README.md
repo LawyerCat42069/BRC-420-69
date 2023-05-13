@@ -1,5 +1,15 @@
 **BRC-420-69 Ordinal Inscriptions**
 
+What if our Ordinals looked like this:
+
+BRC-420
+Collection Name
+Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+Hash Value 1: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
+Hash Value 2: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
+
+      And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal. And validate provenance and metadata by referencing the same ordinal.       Truly decentralized marketplace protocols with on-chain indexing.   
+
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing an image with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection infromation and metadata.
 
 The protocol involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child Ordinals by a combination of transaction ID and first-output as the most immutable data point for the indexing of Ordinals, and describes all of their other metadata, collection information, an AES encryption key, and the collection owner wallet(s). Because the transaction ID and first output cannot be known for the parent at the time of the child inscription creation, children will cross-reference the parent ordinal by satoshi number as the best available data point for the indexing within children ordinals.
@@ -10,7 +20,7 @@ The delayed reveal functionality allows for fair minting of ordinals to happen e
 
 Once inscribed, the parent inscription must remain in a designated owner wallet, or be sent to Satoshi's wallet to "renounce" the collection. This BRC-420 incription can be inscribed in an encrypted manner as well, to allow for less decentralized but more private decryption, or could even remain uninscribed to maintain more secrecy of the underlying inscription data (uninscribed "orphan" ordinals would also be appropriate for individual items not part of a collection). The privacy implications could be significant for any types of document that an individual might want inscribed onto the blockchain without it being publicly visible or known. 
 
-Using cryptography as the basis for the inscribed ordinal is significant because it allows us to transcend what would ordinarily be the file size limits of ordinals. You can store significant amounts of data in a hash using the power of hash+encryption key. And by using base64 conversion of pixels, you can get exactly the same images - except bigger...and with steganography, you can embed metadata on those images. Two hashes can replace what would ordinarily be much larger file sizes. Once the parent inscription is inscribed, the data is immutably accessible and verifiable by checking the BRC-69 metadata against the BRC-420 metadata- provenance for Bitcoin Ordinals. And because the parent inscription references the children by transaction ID and first output, that point of reference is truly immutable and will always point to the actual child inscriptions. 
+Using cryptography as the basis for the inscribed ordinal is significant because it allows us to transcend what would ordinarily be the file size limits of ordinals. You can store significant amounts of data in a hash using the power of hash+encryption key. And by using base64 conversion of pixels, you can get exactly the same images - except bigger...and with steganography, you can embed metadata on those images. Two hashes and slightly more arbitrary data can replace what would ordinarily be much larger file sizes. Once the parent inscription is inscribed, the data is immutably accessible and verifiable by checking the BRC-69 metadata against the BRC-420 metadata- ensuring provenance for Bitcoin Ordinals. And because the parent inscription references the children by transaction ID and first output, that point of reference is truly immutable and will always point to the actual child inscriptions. 
 
 CRYPTOGRAPHY IS, ALWAYS HAS BEEN, AND ALWAYS WILL BE THE ANSWER. 
 
@@ -35,35 +45,27 @@ Decodes the base64 strings into a BMP image and metadata.
 Embeds metadata into the image using steganography.
 Saves the resulting image. 
 Writes the extracted metadata to a JSON file. 
-Steganographically embeds the metadata into the image. Saves that output. 
-  
-
+Steganographically embeds the metadata into the image. Saves that output.  
 Dependencies
 This script depends on the following Python libraries:
 
-  base64
+  base64, 
+  json, 
+  PIL (Pillow), 
+  io, 
+  stegano, 
+  cryptography, 
+  argparse, 
+  pandas,
 
-  json
+**Conclusion**
 
-  PIL (Pillow)
-
-  io
-
-  stegano
-
-  cryptography
-  
-  argparse
-  
-  pandas
-
-Conclusion
-
-The BRC-69 standard provides a robust method for taking image collections with associated metadata and inscribing them on the Bitcoin blockchain in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain.
+The BRC-69 standard provides a robust method for taking image collections with associated metadata and inscribing them on the Bitcoin blockchain in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain.
 
 FOR ORDICORD COMPETITTION: ONLY SOME OF THESE PIECES ARE CURRENTLY WORKING AND NOT ALL OF THEM WILL END UP BEING PART OF THE FINAL PRODUCT. PLEASE FOCUS ON THIS DOCUMENT TO JUDGE MY PROJECT BUT FEE FREE TO TRY THEM. 
 
 
 License
+
 
 This project is licensed under CC0, do whatever you want.
