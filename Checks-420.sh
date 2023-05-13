@@ -3,6 +3,7 @@
 # Read the data from the source file
 SOURCE_FILE="source.json"
 PARENT_SATOSHI_NUMBER=$(jq -r '.parentSatoshiNumber' "$SOURCE_FILE")
+CHILD_SATOSHI_NUMBER=$(jq -r '.childSatoshiNumber' "$SOURCE_FILE")
 FILE_CIPHER=$(jq -r '.fileCipher' "$SOURCE_FILE")
 METADATA_CIPHER=$(jq -r '.metadataCipher' "$SOURCE_FILE")
 
@@ -76,3 +77,11 @@ PARENT_DATA=$(echo "$OUTPUT_PARENT_SCRIPT" | xxd -r -p | awk '/OP_RETURN/ { prin
 # Display the extracted data
 echo "Parent Data:"
 echo "$PARENT_DATA"
+
+# Extract the child Satoshi number from the Parent Data column
+CHILD_SATOSHI_NUMBER_PARENT_DATA=$(echo "$PARENT_DATA" | jq -r '.childSatoshiNumber')
+
+# Compare the child Satoshi number from Parent Data with the one from the source JSON
+if [[ "$CHILD_SATOSHI_NUMBER_PARENT_DATA" != "$CHILD_SATOSHI_NUMBER" ]]; then
+    echo "Could not verify BRC 420/69 pairing."
+fi
