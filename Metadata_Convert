@@ -4,12 +4,6 @@ import json
 import argparse
 import pandas as pd
 
-def encode_metadata_as_base64(metadata):
-    encoded_metadata = {}
-    for key, value in metadata.items():
-        encoded_value = base64.b64encode(str(value).encode('utf-8')).decode('utf-8')
-        encoded_metadata[key] = encoded_value
-    return encoded_metadata
 
 def read_metadata_from_csv(csv_path):
     df = pd.read_csv(csv_path)
@@ -21,6 +15,14 @@ def read_metadata_from_csv(csv_path):
         encoded_metadata = encode_metadata_as_base64(metadata_dict)
         metadata_list.append(encoded_metadata)
     return metadata_list
+    
+def encode_metadata_as_base64(metadata):
+    encoded_metadata = {}
+    for key, value in metadata.items():
+        encoded_value = base64.b64encode(str(value).encode('utf-8')).decode('utf-8')
+        encoded_metadata[key] = encoded_value
+    return encoded_metadata
+
 
 def save_metadata_as_json(metadata_list):
     json_file_path = 'metadata.json'
