@@ -19,7 +19,7 @@ Disadvantages to this standard, especially currently, is that it's a lot of work
 Steps:
 
 1. Assemble Parent (BRC-420) Collection JSON with all desired metadata. Identify satoshis of parent and child inscriptions using a satoshi indexer and include that information in the metadata of each.  
-2. Next you will need to manually convert your desired visual output into a bitmap, and from there convert it into a base64 string. You can do the BMP to base64 conversion using the LibrarytoBMP script for all files in the chosen directory. 
+2. Next you will need to manually convert your desired visual output into a bitmap, and from there convert it into a base64 string. You can do the BMP to base64 conversion using the BMPConvert script for all files in the chosen directory. 
 3. Then, you will need to convert the metadata into a base64 and write it into a JSON.  You can do this using Metadata_Convert.  
 4. Then using BRC69_EncryptStrings, you encrypt the base64 into two AES hashes using AES encryption. 
 5. OrdinalMaker will take a designated JSON containing metadata as base64 alongside the base64 data for the images, and encrypt as a two separate hashes using AES encryption, writing them into a separate table. 
