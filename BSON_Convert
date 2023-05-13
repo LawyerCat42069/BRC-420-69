@@ -1,4 +1,36 @@
 import bson
+import sys
+
+def convert_file_to_bson(file_path, bson_file_path):
+    # Read the file data in binary mode
+    with open(file_path, 'rb') as file:
+        binary_data = file.read()
+
+    # Convert binary data to BSON format
+    bson_data = bson.dumps(binary_data)
+
+    # Write BSON data to the BSON file
+    with open(bson_file_path, 'wb') as bson_file:
+        bson_file.write(bson_data)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1 and sys.argv[1] == 'convert':
+        if len(sys.argv) > 2:
+            input_file = sys.argv[2]
+        else:
+            input_file = input("Enter the file path: ")
+
+        if len(sys.argv) > 3:
+            bson_file = sys.argv[3]
+        else:
+            bson_file = input("Enter the BSON file path: ")
+
+        # Convert the file to BSON
+        convert_file_to_bson(input_file, bson_file)
+    else:
+        print("Usage: python script.py convert <input_file> <bson_file>")
+import bson
 
 def convert_file_to_bson(file_path, bson_file_path):
     # Read the file data in binary mode
