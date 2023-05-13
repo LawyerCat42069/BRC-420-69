@@ -1,7 +1,7 @@
 import sys
 import bson
 
-def create_binary_equation_from_bson(file_path, base_number=2100000000000000):
+def create_binary_equation_from_bson(file_path, base_number=990000000000000000000000000000):
     # Load the BSON data from file
     with open(file_path, 'rb') as file:
         bson_data = file.read()
@@ -41,7 +41,7 @@ if __name__ == '__main__':
     else:
         bson_file = input("Enter the BSON file path: ")
 
-    base_number = 2100000000000000
+    base_number = 990000000000000000000000000000
 
     # Create the binary equation from BSON file (with specified base number)
     binary_equation = create_binary_equation_from_bson(bson_file, base_number)
