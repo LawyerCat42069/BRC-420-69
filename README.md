@@ -3,8 +3,8 @@
 What if our Ordinals looked like this:
 
     BRC-69
-    Collection Name
-    Item No. / Collection Size
+    Collection Name: 
+    Item: Item No. / Collection Size
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
     Parent Token Designation: BRC-420  
