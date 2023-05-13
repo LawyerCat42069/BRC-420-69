@@ -4,6 +4,7 @@ What if our Ordinals looked like this:
 
     BRC-420
     Collection Name
+    Item No. / Collection Size
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
     Hash Value 1: 7f3aabc4e1526795943d9ced300101746dbf0a6dc317454c273901c2e50d943d
     Hash Value 2: 585bf05702be6ca257e41978ec7625a2c2bce67cb6370bea859a3d31fc399a2d
@@ -23,7 +24,7 @@ Once inscribed, the parent inscription must remain in a designated owner wallet,
 
 Using cryptography as the basis for the inscribed ordinal is significant because it allows us to transcend what would ordinarily be the file size limits of ordinals. You can store significant amounts of data in a hash using the power of hash+encryption key. And by using base64 conversion of pixels, you can get exactly the same images - except bigger...and with steganography, you can embed metadata on those images. Two hashes and slightly more arbitrary data can replace what would ordinarily be much larger file sizes. Once the parent inscription is inscribed, the data is immutably accessible and verifiable by checking the BRC-69 metadata against the BRC-420 metadata- ensuring provenance for Bitcoin Ordinals. And because the parent inscription references the children by transaction ID and first output, that point of reference is truly immutable and will always point to the actual child inscriptions. 
 
-CRYPTOGRAPHY IS, ALWAYS HAS BEEN, AND ALWAYS WILL BE THE ANSWER. 
+CRYPTOGRAPHY IS, ALWAYS HAS BEEN, AND ALWAYS WILL BE THE ANSWER. If you don't burn the bitcoin punk that you burned your eth cryptopunk for, in order to obtain the BRC-69 Punk, what are you even doing with your life? 
 
 Disadvantages to this standard, especially currently, is that it's a lot of work to get all of the pieces of a collection together. I'm working on the tools for that. I would like to get to the point where anyone with the script can take an image library and properly formatted JSON + metadata table in a folder, aim a bash command at the folder, and get their collection hashes automatically. I believe the inscription of those hashes could be further automated but that is beyond my current knowledge/skill. I look forward to seeing what others have to say/think about these ideas. Additionally another disadvantage is that the complication of decryption means that individuals will need to rely on readers in wallets, websites, marketplaces, and other applications in order to make the ordinal enjoyable in the traditional way. 
 
