@@ -10,6 +10,8 @@ What if our Ordinals looked like this:
     
     Parent file type:
     
+    Child file ype: 
+    
     Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
     
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
