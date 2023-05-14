@@ -12,9 +12,7 @@ What if our Ordinals looked like this:
     Parent Token Designation: BRC-420  
     Image Cipher: Encrypted [base^exponent+integer]
     Metadata Cipher: Encrypted [base^exponent+integer]
-
-
-And then a marketplace could decode it using a script also inscribed as an Ordinal, by referencing an encryption key found in a parent ordinal, with an output consisting of an image with embedded metadata; and then validate provenance and metadata by referencing the same parent ordinal. Truly decentralized marketplace protocols with on-chain indexing.   
+ 
 
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing an image with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata.
 
