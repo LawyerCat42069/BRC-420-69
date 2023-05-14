@@ -6,21 +6,21 @@ What if most of our Ordinals looked like this:
   
     Collection Name: Collection of Ordinals
 
-    Collection Image Satoshi number: XXXXXXXXXXXXXXXXX
+      Collection Image Satoshi number: XXXXXXXXXXXXXXXXX
     
-    Item: Item No. / Collection Size
-    
-    Parent file type: JSON
-    
-    Child file ype: JPEG  
+      Item: Item No. / Collection Size  
     
     Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
-    
-    Parent Token Designation: BRC-420  
+     
+      Parent file type: JSON
+     
+      Parent Token Designation: BRC-420  
    
-    Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+      Parent Satoshi Number: XXXXXXXXXXXXXXXXX
     
-    Child Satoshi Number:XXXXXXXXXXXXXXXXX 
+    Child Satoshi Number:XXXXXXXXXXXXXXXXX
+    
+        Child file type: JPEG  
     
     File Password Cipher: LjuGDb4MyvrCeSVj4Ia2LftJpT5wq51pkSqKKwjEm5I= [if desired] 
     
@@ -34,40 +34,40 @@ What if most of our Ordinals looked like this:
         
        BRC-420 
 
-        File type: JSON
+         File type: JSON
 
-        Collection Name: Collection of Ordinals
+         Collection Name: Collection of Ordinals
         
-        Collection Description: This is a collection of Ordinals
+         Collection Description: This is a collection of Ordinals.
+        
+         Collection Image Satoshi Number: XXXXXXXXXXXXXXXXX
+
+         Collection Image txid/io: XXXXXXXXXXXXXXXXX
+
         
         Parent Wallet Address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
         
-        Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+           Parent Satoshi Number: XXXXXXXXXXXXXXXXX
         
         Cipher Key [optional if child has encrypted pw]: Purrivate123456!
         
-        Child File Type: JPEG
-        
-        Collection Image Satoshi Number: XXXXXXXXXXXXXXXXX
-
-        Collection Image txid/io: XXXXXXXXXXXXXXXXX
-
-        Terms and Conditions txid/io [if applicable]:
-        
-        Terms and Conditions Satoshi Number [if applicable]:  
-        
+        Child File Type: JPEG 
+       
         Terms and Conditions Auth Wallet Address [if applicable]:
+          
+          Terms and Conditions txid/io [if applicable]:
         
+          Terms and Conditions Satoshi Number [if applicable]:  
+         
+         
         Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
-        
-        
-        
-
+         
+         
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing files with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata.
 
-The protocol involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child Ordinals by a combination of transaction ID and first-output as the most immutable data point for the indexing of Ordinals, and describes all of their other metadata, collection information, an AES encryption key, and the collection owner wallet(s). Because the transaction ID and first output cannot be known for the parent at the time of the child inscription creation, children will cross-reference the parent Ordinal by satoshi number as the best available data point for the indexing within children ordinals.
+The protocol involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child Ordinals by a combination of transaction ID and first-output as the most immutable data point for the indexing of Ordinals, and describes all of their other metadata, collection information, an AES encryption key [if applicable], and the collection owner wallet(s). Because the transaction ID and first output cannot be known for the parent at the time of the child inscription creation, children will cross-reference the parent Ordinal by satoshi number as the best available data point for the indexing within children ordinals.
 
-The child inscription (BRC-69) consists of the necessary metadata specified above steganogrpahically embedded into a compressed file. NOTE: TESTING IS REQUIRED TO DETERMINE THE EXTENT TO WHICH THESE BYTES CAN BE EMBEDDED WITHOUT ALTERING COMPRESSED FILE CONTENTS. With the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, extract only the specified file type, and save it as the appropriate file type as designated in the BRC-420 in a sandbox environment used for display/ux. THIS COULD APPLY TO A MULTITUDE OF FILE TYPES. SO LONG AS THE PROTOCOL FOR ENSURING PROVENANCE OF THE PARENT ORDINAL IS LEGITIMATE, AND A SANDBOX ENVIRONMENT IS USED BY THE VIEWER APPLICATION, THE UNDERLYING FILE SHOULD BE SAFE TO EXTRACT IN THIS WAY.  
+The child inscription (BRC-69) consists of the necessary metadata specified above steganogrpahically embedded into either the file itself or a compressed file, depending on the needs and desires of the inscriber. NOTE: TESTING IS REQUIRED TO DETERMINE THE EXTENT TO WHICH THESE BYTES CAN BE EMBEDDED WITHOUT ALTERING COMPRESSED FILE CONTENTS. With the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, extract only the specified file type, and save it as the appropriate file type as designated in the BRC-420 in a sandbox environment used for display/ux. THIS COULD APPLY TO A MULTITUDE OF FILE TYPES. SO LONG AS THE PROTOCOL FOR ENSURING PROVENANCE OF THE PARENT ORDINAL IS LEGITIMATE, AND A SANDBOX ENVIRONMENT IS USED BY THE VIEWER APPLICATION, THE UNDERLYING FILE SHOULD BE SAFE TO EXTRACT IN THIS WAY.  
 
 The delayed reveal functionality allows for fair minting of ordinals to happen entirely on the Bitcoin blockchain. Ordinals can be listed on centralized marketplaces sight unseen, and they can be purchased there and revealed (upon parent inscription) after sellout. Only the holder of the parent information (and others with access to that information) would know the underlying files. 
 
