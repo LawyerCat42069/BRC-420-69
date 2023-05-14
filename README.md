@@ -10,9 +10,7 @@ What if most of our Ordinals looked like this:
     
       Item: Item No. / Collection Size  
     
-    Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
-     
-      Parent file type: JSON
+    Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse 
      
       Parent Token Designation: BRC-420  
    
