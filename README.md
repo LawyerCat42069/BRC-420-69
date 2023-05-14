@@ -59,7 +59,7 @@ What if most of our Ordinals looked like this:
         
         
         Child File Extension: .jpg
-        Children Compression file type [if needed]: .zip  
+           Children Compression file type [if needed]: .zip  
          
          
         Terms and Conditions Auth Wallet Address [if applicable]:
