@@ -22,9 +22,9 @@ What if our Ordinals looked like this:
     
     Parent Token Designation: BRC-420  
     
-    Image Cipher: Encrypted compressed file pw
+    Image Cipher: Encrypted compressed file pw [if desired]
     
-    Metadata Cipher: Encrypted compressed file pw 
+    Metadata Cipher: Encrypted compressed file pw [if desired]
  
  The Parent Ordinal would consist of the following metadata:
         
@@ -40,7 +40,7 @@ What if our Ordinals looked like this:
         
         Parent Satoshi Number: XXXXXXXXXXXXXXXXX
         
-        Cipher Key
+        Cipher Key [optional if child is encrypted]:
         
         Child File Type: JPEG
         
@@ -48,9 +48,9 @@ What if our Ordinals looked like this:
 
         Collection Image txid/io:
 
-        Terms and Conditions txid/io (if applicable):
+        Terms and Conditions txid/io [if applicable]:
         
-        Terms and Conditions satoshi number (if applicable):  
+        Terms and Conditions satoshi number [if applicable]:  
         
         Terms and Conditions Auth Wallet address:
         
