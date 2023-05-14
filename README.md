@@ -110,13 +110,12 @@ An actual web3. One that does not need to depend on web2 infrastructure other th
 
 Any file that can be compressed and inscribed can be authenticated and viewed using information that is entirely onchain. All you need is the key (if needed) and the proper application to use the file, whatever it may be. You can put dapp  pieces (including such a reader) into files that contain executable code and cross-reference them with each other, daisy chain them, using inscription metadata. You could also inscribe compressed/protected webpages - securing your HTML code with the power strong password security and the AES/MD5 hash (really, TLS is an option here too). Webpages would likely require a different protocol entirely with similar provenance standards. You can inscribe html that calls to other inscriptions to display media or execute dapps, and can only be decompressed and read with the encryption key, which can be public or private. And once it is on the blockchain, it's there forever. The html can also call to data offchain. Permanent webhosting on the bitcoin blockchain and on your satoshis. Updating the website and hosting that only costs you inscription fees, and very small ones at that because HTML does not take up huge amounts of byte space. 
  
-You could make it such that a terminal with bash, python & java with a full compliment, bitcoin core, inscription wallets, and an internet connection is capable of executing all of this in a sandbox environment (bash inscribable) with an amnesiac cache (inscribable). You can inscribe a BitcoinBrowser to make API calls to the blockchain or explaore the internet. By doing this in a sandbox environment with an amnesiac cache and using the BRC420-69 protocol to ensure that the ordinals in question reside in the owner wallet or satoshi's wallet, this would be a very secure environment for the execution of dapps, viewing of websites, and many other applications. You can travel the world and access everything with nothing more than your seed phrases, any nonpublic encryption keys and a qualifying terminal. 
+You could make it such that a terminal with bash, python & java with a full compliment, bitcoin core, inscription wallets, and an internet connection is capable of executing all of this in a sandbox environment (bash inscribable) with an amnesiac cache (inscribable). You can inscribe a BitcoinBrowser to make API calls to the blockchain and/or explore the internet. By doing this in a sandbox environment with an amnesiac cache and using the BRC420-69 protocol to ensure that the ordinals in question reside in the owner wallet or satoshi's wallet, this would be a very secure environment for the execution of dapps, viewing of websites, and many other applications. You can travel the world and access everything with nothing more than your seed phrases, any nonpublic encryption keys and a qualifying terminal. 
 
 **Is this too complicated?**
 
-Possibly, definitely for some - but the complicated aspects can be automated and drastically simplified from a UX perspective. I am imagining a future where it doesn't matter if the government "shuts off the internet" as long as the Bitcoin network is operational. Node servers, node hosts. No gods, no masters. 
-
-All you need is the information of the ordinal containing the sandbox enironment script and the same for the browser script, provided that the shell is able to explore the bitcoin blockchain. That plus your key(s) and you are off to the races. Of course some files will always be too big to inscribe, but those can be hosted in web2 and referenced by inscribed scripts (which can be updated via re-inscription) if need be. I am thinking the shell and browser reside in parent ordinals, which can be called and executed through the 420/69 or similar protocol by calling a child ordinal, validating the provenance of both through onchain indexing/cross-referencing of metadata. Distribution of satoshis can replace distribution of software in a sense, because without knowledge of the satoshi's information (which could also be protected by an encrypted cipher), they will not be able to readily access the underlying file.  
+Possibly, definitely for some - but the complicated aspects can be automated and drastically simplified from a UX perspective. I am imagining a future where it doesn't matter if the government "shuts off the internet" as long as the Bitcoin network is operational. Node servers, node hosts. No gods, no masters. I think at the end of the day, there will be some people who see value in this. It doesn't take many to turn this into a reality. 
+ 
 
 **Other downsides?**
 
@@ -152,18 +151,20 @@ READER PROTOCOL:
 
 7. Extract/save the file to specified (temporary) directory for use, open appropriate reading application (ideally an authentic inscribed dapp), or opens the directory containing the downloaded file if no appropriate reader can be found within the shell. 
  
-8. Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner.  
+8. Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner. 
+
+9. When application is terminated, optionally clear cache as well.   
         
-The decoding script ideally long term will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. (Ideally that list is managed via largely distributed multisignature and contains multiple valid owner wallets, so that it can be passed on to a new owner quickly if need be. Perhaps that could be further decentralized but I'm not there yet.) If the file does not match the list of approved file types AND/OR does not exist in the BRC-420 metadata of the approved list of dapps, then the decoder app should immediately delete the file and self-terminate, requiring the end user to re-instigate the app. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. 
+The decoding script ideally will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. See SWOT analysis below. 
 
 The BRC-69 Omni Decode + Embed Function does this currently:
 
-Uses the AES key to decrypt the two hashes. 
-Decodes the base64 strings into a BMP image and metadata.
-Embeds metadata into the image using steganography.
-Saves the resulting image. 
-Writes the extracted metadata to a JSON file. 
-Steganographically embeds the metadata into the image. Saves that output.  
+  Uses the AES key to decrypt the two hashes. 
+  Decodes the base64 strings into a BMP image and metadata.
+  Embeds metadata into the image using steganography.
+  Saves the resulting image. 
+  Writes the extracted metadata to a JSON file. 
+  Steganographically embeds the metadata into the image. Saves that output.  
 
 This is outdated based on the protocol outlined above. Lots of this needs rewriting at this point. Might start fresh. 
 
