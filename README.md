@@ -32,12 +32,12 @@ What if most of our Ordinals looked like this:
         Terms and Conditions Satoshi Number [if applicable]:  
         
         Terms and Conditions Auth Wallet Address [if applicable]:
- 
- The Parent Ordinal would consist of the following metadata:
         
-       BRC-420 
-
-         File type: JSON
+    **Ordinal.zip**    
+ 
+ The Parent Ordinal would be a JSON consisting of the following metadata:
+        
+       BRC-420  
 
          Collection Name: Collection of Ordinals
         
@@ -56,7 +56,8 @@ What if most of our Ordinals looked like this:
         Cipher Key [optional if child has encrypted pw]: Purrivate123456!
         
         
-        Child File Type: JPEG 
+        Child File Extension: .jpg
+        Children Compression file type [if needed]: .zip  
          
          
         Terms and Conditions Auth Wallet Address [if applicable]:
@@ -66,7 +67,7 @@ What if most of our Ordinals looked like this:
           Terms and Conditions Satoshi Number [if applicable]:  
          
          
-        Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
+        **Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription).** 
          
          
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This protocol provides a method of storing files with embedded metadata as an Ordinal that is potentially private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the child file and the parent collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata. Infrastructure is needed for all of this to work in a seamless way, but I have started planning that and with my limited skills I am putting together parts of the whole. 
