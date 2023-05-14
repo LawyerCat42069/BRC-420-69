@@ -19,7 +19,9 @@ What if most of our Ordinals looked like this:
     
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
     
-        Child file type: JPEG  
+        Child file type: JPEG
+        
+        Compression & Method: .zip
         
     
     File Password Cipher: LjuGDb4MyvrCeSVj4Ia2LftJpT5wq51pkSqKKwjEm5I= [if desired] 
@@ -67,7 +69,7 @@ What if most of our Ordinals looked like this:
         Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
          
          
-BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This protocol provides a method of cryptographically storing files with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata. Infrastructure is needed for all of this to work in a seamless way, but I have started planning that and with my limited skills I am putting together parts of the whole. 
+BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This protocol provides a method of storing files with embedded metadata as an Ordinal that is potentially private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the file and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata. Infrastructure is needed for all of this to work in a seamless way, but I have started planning that and with my limited skills I am putting together parts of the whole. 
 
 The protocol involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child Ordinals by a combination of transaction ID and first-output as the most immutable data point for the indexing of Ordinals, and describes all of their other metadata, collection information, an AES encryption key [if applicable] of the password for the compressed ordinal on the child satoshi, and the collection owner wallet(s). 
 
@@ -85,28 +87,39 @@ Disadvantages to this standard, especially currently, is that it's a lot of work
 
 **Where does this go?** 
 
-An actual web3. One that does not depend on web2 infrastructure to exist in any way, shape or form. Let's look at it from the 30,000 foot perspective:
+An actual web3. One that does not need to depend on web2 infrastructure other than the series of tubes itself to exist in any way, shape or form. Let's look at it from the 30,000 foot perspective:
 
 Any file that can be compressed and inscribed can be authenticated and viewed using information that is entirely onchain. All you need is the key (if needed) and the proper application to use the file, whatever it may be. You can put dapps pieces (including such a reader) into files that contain executable code and cross-reference them with each other using inscription metadata. You could also inscribe compressed webpages - securing your HTML code with the power strong password security and the AES/MD5 hash (really, TLS is an option here too). Webpages would likely require a different protocol entirely with similar provenance standards. You can inscribe html that calls to other inscriptions to display media or execute dapps, and can only be decompressed and read with the encryption key, which can be public or private. And once it is on the blockchain, it's there forever. The html can also call to data offchain. Permanent webhosting on the bitcoin blockchain and on your satoshis. Updating the website and hosting that only costs you inscription fees, and very small ones at that because HTML does not take up huge amounts of byte space. 
-
-
+ 
 You could make it such that a terminal with bash, python & java with a full compliment, bitcoin core, inscription wallets, and an internet connection is capable of executing all of this in a sandbox environment (bash inscribable) with an amnesiac cache (inscribable). You can inscribe a BitcoinBrowser to make API calls to the blockchain or explaore the internet. By doing this in a sandbox environment with an amnesiac cache and using the BRC420-69 protocol to ensure that the ordinals in question reside in the owner wallet or satoshi's wallet, this would be a very secure environment for the execution of dapps, viewing of websites, and many other applications. You can travel the world and access everything with nothing more than your seed phrases, any nonpublic encryption keys and a qualifying terminal. 
 
-Is this complicated? Yes, but the complicated aspects can be automated and drastically simplified from a UX perspective. I am imagining a future where it doesn't matter if the government "shuts off the internet" as long as the Bitcoin network is operational. Node servers, node hosts. No gods, no masters. All you need is the information of the ordinal containing the sandbox enironment script and the same for the browser script, provided that the shell is able to explore the bitcoin blockchain. That plus your key(s) and you are off to the races. I am thinking the shell and browser reside in parent ordinals, which can be called and executed through the 420/69 or similar protocol by calling a child ordinal, validating the provenance of both through onchain indexing/cross-referencing of metadata. Distribution of satoshis can replace distribution of software in a sense, because without knowledge of the satoshi's information (which could also be protected by an encrypted cipher), they will not be able to readily access the underlying file.  
+**Is this too complicated?**
 
-The next thing I would add is that this protocol is a tool with potential for positive or negative use cases, so I encourage any development on this protocol to keep in mind ways we can integrate best practices to mitigate any potential harm. I don't see alternatives to that which are fully decentralized, but distributed authority systems could make those alternatives more trustworthy, or at least create a system of trusted resources by reference to their ordinal information such as dapps, . 
+Possibly, definitely for some - but the complicated aspects can be automated and drastically simplified from a UX perspective. I am imagining a future where it doesn't matter if the government "shuts off the internet" as long as the Bitcoin network is operational. Node servers, node hosts. No gods, no masters. All you need is the information of the ordinal containing the sandbox enironment script and the same for the browser script, provided that the shell is able to explore the bitcoin blockchain. That plus your key(s) and you are off to the races. Of course some files will always be too big to inscribe, but those can be hosted in web2 and referenced by inscribed scripts (which can be updated via re-inscription) if need be. I am thinking the shell and browser reside in parent ordinals, which can be called and executed through the 420/69 or similar protocol by calling a child ordinal, validating the provenance of both through onchain indexing/cross-referencing of metadata. Distribution of satoshis can replace distribution of software in a sense, because without knowledge of the satoshi's information (which could also be protected by an encrypted cipher), they will not be able to readily access the underlying file.  
 
-Steps:
+The next thing I would add is that this protocol is a tool with potential for positive or negative use cases, so I encourage any development on this protocol to keep in mind ways we can integrate best practices to mitigate any potential harm. I don't see alternatives to that which are fully decentralized, but distributed authority systems could make those alternatives more trustworthy, or at least create a system of trusted resources by reference to their ordinal information such as dapps, websites, etc.  
+
+INSCRIBER PROTOCOL:
 
 1. Assemble Parent (BRC-420) Collection JSON with all desired metadata and files for the collection. 
-2. Compress the files. 
-3. Then, you will need to setganogrpahically embed the metadata onto the compressed file. 
-4. Then using BRC69_EncryptStrings, you encrypt the base64 into two AES hashes using AES encryption. 
-5. OrdinalMaker will take a designated JSON containing metadata as base64 alongside the base64 data for the images, and encrypt as a two separate hashes using AES encryption, writing them into a separate table. 
-6. The paired AES hashes are your BRC-69 Ordinals. Inscribe all of your BRC-69 ordinals as strings using the format found in SampleBRC-69Ordinal. 
-7. Incribe parent JSON file containing AES key and all metadata when you are ready to reveal the collection. 
-8. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet. 
-9. Marketplaces, apps, websites, wallets and other readers could utilize BRC-69Decode+Embed to check parent Ordinal information for provenance first, then decryption key, (of numerous file types) using the (now public) key to decompress/retrieve/display the ordinals in a fully decentralized and permissionless way. [THIS IS NOT FUNCTIONAL YET!] The decoding script ideally long term will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. (Ideally that list is managed via largely distributed multisignature and contains multiple valid owner wallets, so that it can be passed on to a new owner quickly if need be. Perhaps that could be further decentralized but I'm not there yet.) If the file does not match the list of approved file types AND/OR does not exist in the BRC-420 metadata of the approved list of dapps, then the decoder app should immediately delete the file and self-terminate, requiring the end user to re-instigate the app. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. 
+2. Identify target satoshi of parent ordinal using a satoshi indexer, add that information to BRC-420 and individual child metadata.  
+4. OPTIONAL: Choose a secure password for compressed files (delayed reveal, secrecy/privacy). 
+5. OPTIONAL: Encrypt password using AES Encryption, note encryption key in BRC-420 table. Insert cipher into child ordinal metadata table. 
+3. Steganographically embed the metadata into the files (automated ideally).   
+7. OPTIONAL: Compress the Child Ordinal files.  
+8. OPTIONAL: Then, you will need to steganogrpahically embed the Child Ordinal metadata onto the compressed files (also automated, same process).  
+9. Inscribe all of the child ordinal files first, noting each satoshi number and txid/io. 
+10. Complete the BRC-420 metadata table with the information from step 8, ensure completeness of metadata. 
+11. Inscribe BRC-420 JSON file onto target parent ordinal.  
+12. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet. 
+
+READER PROTOCOL:
+
+1. Operate in a secure sandbox environment with access to bash/python/java/any other needed coding libraries and a basic web browser (or maybe one day, BitcoinBrowser), other file readers, any other security protocol we can think of. Maybe the shell script could also be inscribed. 
+
+2. Always ensure provenance of parent/child pair, first check that parent is in an authorized wallet and that the files contained in both ordinals match the expected file types based on cross-referencing. 
+3. 
+10. Marketplaces, apps, websites, wallets and other readers could utilize BRC-69Decode+Embed to check parent Ordinal information for provenance first, then decryption key, (of numerous file types) using the (now public) key to decompress/retrieve/display the ordinals in a fully decentralized and permissionless way. [THIS IS NOT FUNCTIONAL YET!] The decoding script ideally long term will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. (Ideally that list is managed via largely distributed multisignature and contains multiple valid owner wallets, so that it can be passed on to a new owner quickly if need be. Perhaps that could be further decentralized but I'm not there yet.) If the file does not match the list of approved file types AND/OR does not exist in the BRC-420 metadata of the approved list of dapps, then the decoder app should immediately delete the file and self-terminate, requiring the end user to re-instigate the app. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. 
 
 The BRC-69 Omni Decode + Embed Function does this:
 
