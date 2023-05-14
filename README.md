@@ -5,13 +5,21 @@ UNDER CONSTRUCTION - REEVALUATING COMPRESSION AND ENCRTYPTION METHODS
 What if our Ordinals looked like this:
 
   BRC-69
+  
     Collection Name: 
+    
     Item: Item No. / Collection Size
+    
     Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
+    
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+    
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
+    
     Parent Token Designation: BRC-420  
+    
     Image Cipher: Encrypted compressed file pw
+    
     Metadata Cipher: Encrypted compressed file pw 
  
 
