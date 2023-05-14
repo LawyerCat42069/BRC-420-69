@@ -1,7 +1,5 @@
 **BRC-420-69 Ordinal Inscriptions**
-
-UNDER CONSTRUCTION - REEVALUATING COMPRESSION AND ENCRTYPTION METHODS
-
+ 
 What if our Ordinals looked like this:
 
     BRC-69
@@ -32,7 +30,9 @@ What if our Ordinals looked like this:
 
         Collection Name: Collection of Ordinals
         
-        Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
+        Collection Description: This is a collection of Ordinals
+        
+        Parent Wallet Address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
         
         Parent Satoshi Number: XXXXXXXXXXXXXXXXX
         
