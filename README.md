@@ -150,26 +150,7 @@ You could make it such that a terminal with bash, python & java with a full comp
 **Is this too complicated?**
 
 Possibly, definitely for some - but the complicated aspects can be automated and drastically simplified from a UX perspective. I am imagining a future where it doesn't matter if the government "shuts off the internet" as long as the Bitcoin network is operational. Node servers, node hosts. No gods, no masters. I think at the end of the day, there will be some people who see value in this. It doesn't take many to turn this into a reality. 
- 
-
-**Other downsides?**
-
-
-
-        
-The decoding script ideally will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. See SWOT analysis below. 
-
-The BRC-69 Omni Decode + Embed Function does this currently:
-
-  Uses the AES key to decrypt the two hashes. 
-  Decodes the base64 strings into a BMP image and metadata.
-  Embeds metadata into the image using steganography.
-  Saves the resulting image. 
-  Writes the extracted metadata to a JSON file. 
-  Steganographically embeds the metadata into the image. Saves that output.  
-
-This is outdated based on the protocol outlined above. Lots of this needs rewriting at this point. Might start fresh. 
-
+  
 Dependencies
 This script depends on the following Python libraries: 
   base64, 
@@ -186,7 +167,7 @@ This script depends on the following Python libraries:
 
 The BRC-420/69 standard provides a robust method for taking file collections with associated metadata and inscribing them on the Bitcoin blockchain, potentially in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. 
 
-FOR ORDICORD COMPETITTION: ONLY SOME OF THESE PIECES ARE CURRENTLY WORKING AND NOT ALL OF THEM WILL END UP BEING PART OF THE FINAL PRODUCT. PLEASE FOCUS ON THIS DOCUMENT TO JUDGE MY PROJECT BUT FEE FREE TO TRY THEM. 
+FOR ORDICORD COMPETITTION: I TOTALLY REDEFINED WHAT I WANTED TO DO OVER THE LAST 24-HOURS, I THINK THIS IS FINALLY A GOOD STARTING PLACE. 
 
 License:  
 This project is licensed under CC0, do whatever you want.
