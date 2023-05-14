@@ -8,9 +8,9 @@ What if our Ordinals looked like this:
     
     Item: Item No. / Collection Size
     
-    Parent file type:
+    Parent file type: JSON
     
-    Child file ype: 
+    Child file ype: JPEG  
     
     Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
     
@@ -48,7 +48,9 @@ What if our Ordinals looked like this:
 
         Terms and Conditions txid/io (if applicable):
         
-        Terms and Conditions txid/io (if applicable):  
+        Terms and Conditions satoshi number (if applicable):  
+        
+        Terms and Conditions Auth Wallet address:
         
         Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
         
