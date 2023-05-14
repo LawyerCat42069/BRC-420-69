@@ -80,7 +80,7 @@ The child inscription (BRC-69) consists of the necessary metadata specified abov
 
 The significance of using compression is two-fold: It allows us to inscribe more bytes of information into a single inscription, enabling significantly larger file inscriptions, and it also 
 
-NOTE: TESTING IS REQUIRED TO DETERMINE THE EXTENT TO WHICH THESE BYTES CAN BE EMBEDDED WITHOUT ALTERING COMPRESSED FILE CONTENTS. With the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, extract only the specified file type, and save it as the appropriate file type as designated in the BRC-420 in a sandbox environment used for display/ux. THIS COULD APPLY TO A MULTITUDE OF FILE TYPES. SO LONG AS THE PROTOCOL FOR ENSURING PROVENANCE OF THE PARENT ORDINAL IS LEGITIMATE, AND A SANDBOX ENVIRONMENT IS USED BY THE VIEWER APPLICATION, THE UNDERLYING FILE SHOULD BE SAFE TO EXTRACT AND USE IN THIS WAY.
+NOTE: TESTING IS REQUIRED TO DETERMINE THE EXTENT TO WHICH THESE BYTES CAN BE EMBEDDED WITHOUT ALTERING COMPRESSED FILE CONTENTS. With the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, extract only the specified file type, and save it as the appropriate file type as designated in the BRC-420 in a sandbox environment used for display/ux. This could apply to a multitude of file types. So long as the process for ensuring provenance of the parent/child pair is legitimate, and a properly constructed environment is used by the sandbox application, the underlying files shoudl be safe to extract and use in this way.
 
 SUB-NOTE: THE SECURITY OF OF ANY ENCRYPTED PASSWORD IS IN LARGE PART DEPENDENT ON THE LENGTH OF THE ENCRYPTED PASSWORD. PASSWORDS OF FILES ON THE BLOCKCHAIN ARE SUSCEPTIBLE TO BRUTE FORCE ATTACKS, SO ANY EFFORTS AT TRUE SECRECY MUST TAKE THIS INTO ACCOUNT.  
 
@@ -90,15 +90,19 @@ Once inscribed, the parent inscription must remain in a designated owner wallet,
 
 **SWOT ANALYSIS**
 
-**Stengths:** I believe these are fairly indicated above. I think the greatest srength lies in the potential of onchain indexing. 
+   **Stengths:** I believe these are fairly indicated above. I think the greatest srength lies in the potential of onchain indexing. 
  
-**Weaknesses:** Disadvantages to this standard, especially currently, is that it's a lot of work to get all of the pieces of a collection together, which could be discouraging for use of the protocol. Figuring out sat #s in advance and targeting them specifically in advance is no easy task - but that is the price that must be paid for provenance as far as I can tell. Working on tools for that and would love help. I would like to get to the point where anyone with the script can take a file library and properly formatted JSON + metadata table in a folder, aim a bash command at the folder, generate the cipher and embed the metadata automatically, with minimal input. I believe the inscription of those hashes could be further automated if the target satoshi information is known but that is beyond my current knowledge/skill.  
+   **Weaknesses:** Disadvantages to this standard, especially currently, is that it's a lot of work to get all of the pieces of a collection together, which could be discouraging for use of the protocol. Figuring out sat #s in advance and targeting them specifically in advance is no easy task - but that is the price that must be paid for provenance as far as I can tell. Working on tools for that and would love help. I would like to get to the point where anyone with the script can take a file library and properly formatted JSON + metadata table in a folder, aim a bash command at the folder, generate the cipher and embed the metadata automatically, with minimal input. I believe the inscription of those hashes could be further automated if the target satoshi information is known but that is beyond my current knowledge/skill.  
+   
+Additionally another disadvantage of the compression/encryption is that the complication of decryption means that individuals will need to rely on readers in wallets, websites, marketplaces, and other applications in order to make the ordinal enjoyable in the traditional way. The complication of decompression of a strange file on the blockchain comes with security risks. The tools will need to be built, safely, and people will need to be convinced that this is worthwhile. However if these reader scripts and applications can be inscribed, they too could exist as dapps on the Bitcoin blockchain that can be easily accessed with the right starter data.  
 
-**Opportunities:** It's a wide open field right now with Ordinals just becoming popular. Now is the time to set a strong standard that takes into account security, decentralized protocols (onchain indexing), and other standards to ensure secure, optimal use cases for the technology moving forward.
+The next thing I would add is that this protocol is a tool with potential for positive or negative use cases, so I encourage any development on this protocol to keep in mind ways we can integrate best practices to mitigate any potential harm. I don't see alternatives to that which are fully decentralized, but distributed authority systems could make those alternatives more trustworthy, or at least create a system of trusted resources by reference to their ordinal information such as dapps, websites, etc. People could rely on them or not as they chose, but I see value in a trustworthy source of information on which inscribed dapps and inscribed websties, in particular, are safe. Additionally could include an inscribed list (or multiple lists linked with metadata) of malicious or problematic inscriptions for decentralized protocols to optionally filter out such content. 
 
-**Threats:** Abuse of the protocol leading to a bad reputation is my primary concern here. Malware or other malicious/illegal files being inscribed and attempting to fool the protocol to create security or other threats to end users or the blockchain itself. 
+   **Opportunities:** It's a wide open field right now with Ordinals just becoming popular. Now is the time to set a strong standard that takes into account security, decentralized protocols (onchain indexing), and other standards to ensure secure, optimal use cases for the technology moving forward.
 
-I look forward to seeing what others have to say/think about these ideas. Additionally another disadvantage is that the complication of decryption means that individuals will need to rely on readers in wallets, websites, marketplaces, and other applications in order to make the ordinal enjoyable in the traditional way. However if these reader scripts and applications can be inscribed, they too could exist as dapps on the Bitcoin blockchain. 
+   **Threats:** Abuse of the protocol leading to a bad reputation is my primary concern here. Malware or other malicious/illegal files being inscribed and attempting to fool the protocol to create security or other threats to end users or the blockchain itself. Aside from that, the threats to this protocol are the same as the threats to Bitcoin itself.  
+
+I look forward to seeing what others have to say/think about these ideas. 
 
 **Where does this go?** 
 
@@ -116,7 +120,6 @@ All you need is the information of the ordinal containing the sandbox enironment
 
 **Other downsides?**
 
-The next thing I would add is that this protocol is a tool with potential for positive or negative use cases, so I encourage any development on this protocol to keep in mind ways we can integrate best practices to mitigate any potential harm. I don't see alternatives to that which are fully decentralized, but distributed authority systems could make those alternatives more trustworthy, or at least create a system of trusted resources by reference to their ordinal information such as dapps, websites, etc.  
 
 INSCRIBER PROTOCOL:
 
