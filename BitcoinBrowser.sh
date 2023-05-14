@@ -21,7 +21,7 @@ data=$(bitcoin_core_api_call "$input")
     #Pull the Parent Wallet Address and Satoshi Number data from the steganographically embedded metadata on the file
     #API call to parent satoshi, if wallet matches PWA, then download the JSON file
     #If JSON contains field labeled "cipher key" store temporarily as AES decryption key. 
-    #Run AES decryption on the child metadata field labeled "Encrypted File Password" and store temporarily as password for compressed zip file attached to child ordinal, if there is one
+    #Run AES decryption on the child metadata field labeled "Encrypted File Password" and store temporarily as "$password" for compressed zip file attached to child ordinal, if there is one
     
 # Replace with your security check logic
 security_check_result=$(perform_security_check "$data")
@@ -67,6 +67,10 @@ display_content() {
     xdg-open "file://$output_dir/index.html" >/dev/null 2>&1
 }
 
+# Unzip the file using the provided password
+
+    unzip -P "$password" "$zip_file" -d "$output_dir"
+    
 # Function to prompt for a password if a ZIP file is password-protected
 prompt_password() {
     local zip_file="$1"
@@ -79,9 +83,7 @@ prompt_password() {
     unzip -P "$password" "$zip_file" -d "$output_dir"
 }
 
-
-
-# Placeholder for unzipping files if necessary
+ 
 # Replace with your unzipping logic if needed
 unzip_files "$data"
 
@@ -141,12 +143,10 @@ EOF
 
     # Open the HTML file in the default web browser
     xdg-open "$html_file"
-}
-
-# Rest of the script...
+} 
 
 # Fetch the HTML content and store it in the $data variable
- 
+  
 
 # Call the display_content function to process and display the content
 display_content "$data"
