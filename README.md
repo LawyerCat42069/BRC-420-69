@@ -4,7 +4,7 @@ UNDER CONSTRUCTION - REEVALUATING COMPRESSION AND ENCRTYPTION METHODS
 
 What if our Ordinals looked like this:
 
-  BRC-69
+    BRC-69
   
     Collection Name: Collection of Ordinals
     
