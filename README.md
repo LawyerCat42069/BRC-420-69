@@ -15,12 +15,15 @@ What if most of our Ordinals looked like this:
       Parent Token Designation: BRC-420  
    
       Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+      
     
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
     
         Child file type: JPEG  
+        
     
     File Password Cipher: LjuGDb4MyvrCeSVj4Ia2LftJpT5wq51pkSqKKwjEm5I= [if desired] 
+    
     
     Terms and Conditions txid/io [if applicable]:
         
@@ -46,11 +49,14 @@ What if most of our Ordinals looked like this:
         Parent Wallet Address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
         
            Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+           
         
         Cipher Key [optional if child has encrypted pw]: Purrivate123456!
         
+        
         Child File Type: JPEG 
-       
+         
+         
         Terms and Conditions Auth Wallet Address [if applicable]:
           
           Terms and Conditions txid/io [if applicable]:
