@@ -6,7 +6,7 @@ What if our Ordinals looked like this:
 
   BRC-69
   
-    Collection Name: 
+    Collection Name: Collection of Ordinals
     
     Item: Item No. / Collection Size
     
