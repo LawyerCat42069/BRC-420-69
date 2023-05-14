@@ -1,6 +1,6 @@
 **BRC-420-69 Ordinal Inscriptions**
  
-What if our Ordinals looked like this:
+What if most of our Ordinals looked like this:
 
     BRC-69
   
