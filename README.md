@@ -6,7 +6,7 @@ What if most of our Ordinals looked like this:
   
     Collection Name: Collection of Ordinals
 
-    Collection Image Satoshi number: 
+    Collection Image Satoshi number: XXXXXXXXXXXXXXXXX
     
     Item: Item No. / Collection Size
     
@@ -22,9 +22,7 @@ What if most of our Ordinals looked like this:
     
     Parent Token Designation: BRC-420  
     
-    Image Cipher: Encrypted compressed file pw [if desired]
-    
-    Metadata Cipher: Encrypted compressed file pw [if desired]
+    File Password Cipher: LjuGDb4MyvrCeSVj4Ia2LftJpT5wq51pkSqKKwjEm5I= [if desired] 
  
  The Parent Ordinal would consist of the following metadata:
         
@@ -40,13 +38,13 @@ What if most of our Ordinals looked like this:
         
         Parent Satoshi Number: XXXXXXXXXXXXXXXXX
         
-        Cipher Key [optional if child is encrypted]:
+        Cipher Key [optional if child has encrypted pw]: Purrivate123456!
         
         Child File Type: JPEG
         
-        Collection Image Satoshi Number:
+        Collection Image Satoshi Number: XXXXXXXXXXXXXXXXX
 
-        Collection Image txid/io:
+        Collection Image txid/io: XXXXXXXXXXXXXXXXX
 
         Terms and Conditions txid/io [if applicable]:
         
