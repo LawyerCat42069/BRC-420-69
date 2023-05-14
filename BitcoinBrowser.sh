@@ -5,8 +5,26 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-# Placeholder for Bitcoin Core API call to fetch icon based on Satoshi number
+# Placeholder for Bitcoin Core API call to fetch infromation based on Satoshi number [specified by programmer]
 
+# Placeholder to make API call for icon based on satoshi number
+
+# Prompt the user to enter a website address, Satoshi number, or transaction ID
+read -p "Enter a Website Address, Satoshi Number, or Transaction ID: " input
+
+# Placeholder for API call to Bitcoin Core to retrieve satoshi # or txid
+
+# Replace with the actual API call to fetch data based on the user input
+data=$(bitcoin_core_api_call "$input")
+
+# Placeholder for security provenance check
+    #Pull the Parent Wallet Address and Satoshi Number data from the steganographically embedded metadata on the file
+    #API call to parent satoshi, if wallet matches PWA, then download the JSON file
+    #If JSON contains field labeled "cipher key" store temporarily as AES decryption key. 
+    #Run AES decryption on the child metadata field labeled "Encrypted File Password" and store temporarily as password for compressed zip file attached to child ordinal, if there is one
+    
+# Replace with your security check logic
+security_check_result=$(perform_security_check "$data")
 # Replace with actual API call to retrieve the icon based on the Satoshi number
 satoshi_number="1234567890"
 icon_url=$(bitcoin_core_api_call "$satoshi_number")
@@ -61,18 +79,7 @@ prompt_password() {
     unzip -P "$password" "$zip_file" -d "$output_dir"
 }
 
-# Prompt the user to enter a website address, Satoshi number, or transaction ID
-read -p "Enter a Website Address, Satoshi Number, or Transaction ID: " input
 
-# Placeholder for API call to Bitcoin Core to retrieve relevant data
-# Replace with the actual API call to fetch data based on the user input
-data=$(bitcoin_core_api_call "$input")
-
-# Placeholder for security provenance check
-    #This is where you read the metadata of the child satoshi for the parent address, then API call to the parent address, 
-    
-# Replace with your security check logic
-security_check_result=$(perform_security_check "$data")
 
 # Placeholder for unzipping files if necessary
 # Replace with your unzipping logic if needed
@@ -98,7 +105,51 @@ if [ ${#zip_files[@]} -gt 0 ]; then
         fi
     done
 fi
+#!/bin/bash
 
+# Function to display the content in the browser window
+display_content() {
+    local content="$1"
+
+    # Replace [a href="..."] with clickable links
+    content=$(echo "$content" | sed -E 's|\[a href="([^"]+)"\]|<a href="\1">\1</a>|g')
+
+    # Replace [button] with clickable buttons
+    content=$(echo "$content" | sed -E 's|\[button\]|<button onclick="buttonClicked()">Click Me</button>|g')
+
+    # Generate an HTML file to display the modified content
+    html_file="$output_dir/index.html"
+
+    cat >"$html_file" <<EOF
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitcoin Browser</title>
+    <link rel="icon" href="file://$icon_file" type="image/png">
+    <script>
+        function buttonClicked() {
+            alert("Button Clicked!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Bitcoin Browser</h1>
+    $content
+</body>
+</html>
+EOF
+
+    # Open the HTML file in the default web browser
+    xdg-open "$html_file"
+}
+
+# Rest of the script...
+
+# Fetch the HTML content and store it in the $data variable
+ 
+
+# Call the display_content function to process and display the content
+display_content "$data"
 # Generate an HTML file to display the content
 html_file="$output_dir/index.html"
 
