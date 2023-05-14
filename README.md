@@ -99,7 +99,7 @@ Once inscribed, the parent inscription must remain in a designated owner wallet,
   8. OPTIONAL: Lock the Zip file using the chosen password.   
   9. OPTIONAL: Then, you will need to steganogrpahically embed the Child Ordinal metadata onto the compressed files (also automated, same process).  
   10. Inscribe all of the child ordinal files first, noting each satoshi number and txid/io. 
-  11. Complete the BRC-420 metadata table with the information from step 8, ensure completeness of metadata. 
+  11. Complete the BRC-420 metadata table with the information from step 10, ensure completeness of metadata. 
   12. Inscribe BRC-420 JSON file onto target parent ordinal.  
   13. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet if there is a desire to renounce the metadata. 
 
