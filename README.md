@@ -69,7 +69,7 @@ What if most of our Ordinals looked like this:
         Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
          
          
-BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This protocol provides a method of storing files with embedded metadata as an Ordinal that is potentially private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the file and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata. Infrastructure is needed for all of this to work in a seamless way, but I have started planning that and with my limited skills I am putting together parts of the whole. 
+BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This protocol provides a method of storing files with embedded metadata as an Ordinal that is potentially private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the child file and the parent collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata. Infrastructure is needed for all of this to work in a seamless way, but I have started planning that and with my limited skills I am putting together parts of the whole. 
 
 The protocol involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child Ordinals by a combination of transaction ID and first-output as the most immutable data point for the indexing of Ordinals, and describes all of their other metadata, collection information, an AES encryption key [if applicable] of the password for the compressed ordinal on the child satoshi (if compressed), and the collection owner wallet(s). 
 
@@ -110,12 +110,13 @@ INSCRIBER PROTOCOL:
 4. OPTIONAL: Choose a secure password for compressed files (delayed reveal, secrecy/privacy). 
 5. OPTIONAL: Encrypt password using AES Encryption, note encryption key in BRC-420 table. Insert cipher into child ordinal metadata table. 
 3. Steganographically embed the metadata into the files (automated ideally).   
-7. OPTIONAL: Compress the Child Ordinal files.  
-8. OPTIONAL: Then, you will need to steganogrpahically embed the Child Ordinal metadata onto the compressed files (also automated, same process).  
-9. Inscribe all of the child ordinal files first, noting each satoshi number and txid/io. 
-10. Complete the BRC-420 metadata table with the information from step 8, ensure completeness of metadata. 
-11. Inscribe BRC-420 JSON file onto target parent ordinal.  
-12. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet if there is a desire to renounce the metadata. 
+7. OPTIONAL: Compress the Child Ordinal files.
+8. OPTIONAL: Lock the Zip file using the chosen password.   
+9. OPTIONAL: Then, you will need to steganogrpahically embed the Child Ordinal metadata onto the compressed files (also automated, same process).  
+10. Inscribe all of the child ordinal files first, noting each satoshi number and txid/io. 
+11. Complete the BRC-420 metadata table with the information from step 8, ensure completeness of metadata. 
+12. Inscribe BRC-420 JSON file onto target parent ordinal.  
+13. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet if there is a desire to renounce the metadata. 
 
 READER PROTOCOL:
 
@@ -152,7 +153,7 @@ This script depends on the following Python libraries:
 
 **Conclusion**
 
-The BRC-420/69 standard provides a robust method for taking file collections with associated metadata and inscribing them on the Bitcoin blockchain in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. 
+The BRC-420/69 standard provides a robust method for taking file collections with associated metadata and inscribing them on the Bitcoin blockchain, potentially in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. 
 
 FOR ORDICORD COMPETITTION: ONLY SOME OF THESE PIECES ARE CURRENTLY WORKING AND NOT ALL OF THEM WILL END UP BEING PART OF THE FINAL PRODUCT. PLEASE FOCUS ON THIS DOCUMENT TO JUDGE MY PROJECT BUT FEE FREE TO TRY THEM. 
 
