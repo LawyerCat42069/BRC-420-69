@@ -10,6 +10,8 @@ What if our Ordinals looked like this:
     
     Item: Item No. / Collection Size
     
+    Parent file type:
+    
     Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
     
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
@@ -22,6 +24,34 @@ What if our Ordinals looked like this:
     
     Metadata Cipher: Encrypted compressed file pw 
  
+ The Parent Ordinal would consist of the following metadata:
+        
+       BRC-420 
+
+        File type: JSON
+
+        Collection Name: Collection of Ordinals
+        
+        Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
+        
+        Parent Satoshi Number: XXXXXXXXXXXXXXXXX
+        
+        Cipher Key
+        
+        Child File Type: JPEG
+        
+        Collection Image Satoshi Number:
+
+        Collection Image txid/io:
+
+        Terms and Conditions txid/io (if applicable):
+        
+        Terms and Conditions txid/io (if applicable):  
+        
+        Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
+        
+        
+        
 
 BRC-420-69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This Python-powered protocol provides a method of cryptographically storing an image with embedded metadata as an Ordinal that is private, immutable, secure, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the image and the collection metadata - ensuring long term provenance. This is also a standard that allows for onchain indexing btween the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still display collection information and metadata.
 
