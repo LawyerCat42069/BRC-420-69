@@ -24,6 +24,8 @@ fi
     # Change directory to a safe location if needed
     cd /path/to/safe/location
     
+    #place for API calls to the Bitcoin Blockchain 
+    
     # Run the default shell for viewing the extracted contents
     $SHELL
 )
