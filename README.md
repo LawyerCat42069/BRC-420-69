@@ -35,7 +35,7 @@ What if most of our Ordinals looked like this:
         
         Terms and Conditions Auth Wallet Address [if applicable]:
         
-    **Ordinal.zip**    
+    **Ordinal.filetype or Ordinal.zip**    
  
  The Parent Ordinal would be a JSON consisting of the following metadata:
         
