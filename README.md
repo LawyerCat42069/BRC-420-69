@@ -1,4 +1,4 @@
-**BRC-420-69 Ordinal Inscriptions**
+**BRC-420-69 Ordinal Inscriptions: A Standard for Provenance and Secure File Storage, Authentication, and Management on the Bitcoin Blockchain**
  
 What if most of our Ordinals looked like this:
 
