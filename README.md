@@ -50,9 +50,9 @@ What if our Ordinals looked like this:
 
         Terms and Conditions txid/io [if applicable]:
         
-        Terms and Conditions satoshi number [if applicable]:  
+        Terms and Conditions Satoshi Number [if applicable]:  
         
-        Terms and Conditions Auth Wallet address:
+        Terms and Conditions Auth Wallet Address [if applicable]:
         
         Table of collection metadata with references to each child satoshi by satoshi number as well as txid/io (the most immutable data point for an inscription). 
         
