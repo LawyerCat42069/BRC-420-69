@@ -7,7 +7,7 @@ command_exists() {
 
 # Placeholder for Bitcoin Core API call to fetch icon based on Satoshi number
 
-# Replace with your actual API call to retrieve the icon based on the Satoshi number
+# Replace with actual API call to retrieve the icon based on the Satoshi number
 satoshi_number="1234567890"
 icon_url=$(bitcoin_core_api_call "$satoshi_number")
 
@@ -69,6 +69,8 @@ read -p "Enter a Website Address, Satoshi Number, or Transaction ID: " input
 data=$(bitcoin_core_api_call "$input")
 
 # Placeholder for security provenance check
+    #This is where you read the metadata of the child satoshi for the parent address, then API call to the parent address, 
+    
 # Replace with your security check logic
 security_check_result=$(perform_security_check "$data")
 
@@ -77,7 +79,7 @@ security_check_result=$(perform_security_check "$data")
 unzip_files "$data"
 
 # Placeholder for downloading and storing files
-# Replace with your logic to download and store files
+# Replace with logic to download and store files
 download_file "http://example.com/file.txt" "$output_dir"
 download_file "http://example.com/image.jpg" "$output_dir"
 download_file "http://example.com/video.mp4" "$output_dir"
