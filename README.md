@@ -5,6 +5,8 @@ What if our Ordinals looked like this:
     BRC-69
   
     Collection Name: Collection of Ordinals
+
+    Collection Image Satoshi number: 
     
     Item: Item No. / Collection Size
     
@@ -73,7 +75,9 @@ Disadvantages to this standard, especially currently, is that it's a lot of work
 
 An actual web3. One that does not depend on web2 infrastructure to exist in any way, shape or form. Let's look at it from the 30,000 foot perspective:
 
-Any file that can be compressed and inscribed can be authenticated and viewed using information that is entirely onchain. All you need is the key and the proper reading application to view the image. You can put dapps pieces (including such a reader) into files that contain executable code and cross-reference them with each other using inscription metadata. You could also inscribe compressed webpages - securing your HTML code with the power of the bitcoin blockchain and the AES/MD5 hash (really, TLS is an option here too). Webpages would likely require a different protocol entirely with similar provenance standards. You can inscribe html that calls to other inscriptions to display media or execute dapps, and can only be decompressed and read with the encryption key, which can be public or private. And once it is on the blockchain, it's there forever. Permanent webhosting on the bitcoin blockchain and on your satoshis. Updating the website and hosting that only costs you inscription fees, and very small ones at that because HTML does not take up huge amounts of byte space. You could make it such that a terminal with bash, python with a full compliment, bitcoin core, inscription wallets, and an internet connection is capable of executing all of this in a sandbox environment with an amnesiac cache. By using the BRC420-69 protocol and ensuring that the ordinals in question reside in the owner wallet or satoshi's wallet, this would be a very secure environment for the execution of dapps, viewing of websites, and many other applications. You can travel the world and access everything with nothing more than your seed phrases, any nonpublic encryption keys and a qualifying terminal. 
+Any file that can be compressed and inscribed can be authenticated and viewed using information that is entirely onchain. All you need is the key and the proper reading application to view the image. You can put dapps pieces (including such a reader) into files that contain executable code and cross-reference them with each other using inscription metadata. You could also inscribe compressed webpages - securing your HTML code with the power of the bitcoin blockchain and the AES/MD5 hash (really, TLS is an option here too). Webpages would likely require a different protocol entirely with similar provenance standards. You can inscribe html that calls to other inscriptions to display media or execute dapps, and can only be decompressed and read with the encryption key, which can be public or private. And once it is on the blockchain, it's there forever. The html can also call to data offchain. Permanent webhosting on the bitcoin blockchain and on your satoshis. Updating the website and hosting that only costs you inscription fees, and very small ones at that because HTML does not take up huge amounts of byte space. You could make it such that a terminal with bash, python with a full compliment, bitcoin core, inscription wallets, and an internet connection is capable of executing all of this in a sandbox environment with an amnesiac cache. By doing this and using the BRC420-69 protocol and ensuring that the ordinals in question reside in the owner wallet or satoshi's wallet, this would be a very secure environment for the execution of dapps, viewing of websites, and many other applications. You can travel the world and access everything with nothing more than your seed phrases, any nonpublic encryption keys and a qualifying terminal. 
+
+Is this complicated? Yes, but the complicated aspects can be automated and drastically simplified from a UX perspective. 
 
 The next thing I would add is that this protocol is a tool with potential for positive or negative use cases, so I encourage any development on this protocol to keep in mind ways we can integrate best practices to mitigate any potential harm. I don't see alternatives to that which are fully decentralized, but distributed authority systems could make those alternatives more trustworthy.    
 
@@ -81,9 +85,9 @@ MATH AND CRYPTOGRAPHY IS, ALWAYS HAS BEEN, AND ALWAYS WILL BE THE ANSWER.
 
 Steps:
 
-1. Assemble Parent (BRC-420) Collection JSON with all desired metadata. Identify satoshis of parent and child inscriptions using a satoshi indexer and include that information in the metadata of each.  
-2. Next you will need to manually convert your desired visual output into a bitmap, and from there convert it into a base64 string. You can do the BMP to base64 conversion using the BMPConvert script for all files in the chosen directory. 
-3. Then, you will need to convert the metadata into a base64 and write it into a JSON.  You can do this using Metadata_Convert.  
+1. Assemble Parent (BRC-420) Collection JSON with all desired metadata and files for the collection. 
+2. Compress the files. 
+3. Then, you will need to setganogrpahically embed the metadata onto the compressed file. 
 4. Then using BRC69_EncryptStrings, you encrypt the base64 into two AES hashes using AES encryption. 
 5. OrdinalMaker will take a designated JSON containing metadata as base64 alongside the base64 data for the images, and encrypt as a two separate hashes using AES encryption, writing them into a separate table. 
 6. The paired AES hashes are your BRC-69 Ordinals. Inscribe all of your BRC-69 ordinals as strings using the format found in SampleBRC-69Ordinal. 
