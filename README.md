@@ -16,13 +16,19 @@ What if most of our Ordinals looked like this:
     
     Parent wallet address: bc1qqah90veaaxrcee3hwlxfgucha8npcgp0nzruse
     
+    Parent Token Designation: BRC-420  
+   
     Parent Satoshi Number: XXXXXXXXXXXXXXXXX
     
-    Child Satoshi Number:XXXXXXXXXXXXXXXXX
-    
-    Parent Token Designation: BRC-420  
+    Child Satoshi Number:XXXXXXXXXXXXXXXXX 
     
     File Password Cipher: LjuGDb4MyvrCeSVj4Ia2LftJpT5wq51pkSqKKwjEm5I= [if desired] 
+    
+    Terms and Conditions txid/io [if applicable]:
+        
+        Terms and Conditions Satoshi Number [if applicable]:  
+        
+        Terms and Conditions Auth Wallet Address [if applicable]:
  
  The Parent Ordinal would consist of the following metadata:
         
