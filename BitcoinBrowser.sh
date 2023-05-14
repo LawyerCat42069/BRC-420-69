@@ -3,11 +3,23 @@
 # Function to check if a command is available
 command_exists() {
     command -v "$1" >/dev/null 2>&1
-}
+} 
+
+# Path to the icon file
+icon_file="/path/to/icon.png"
+
+# Check if the file exists in the directory
+if [ ! -f "$directory/file.html" ]; then
+    # Close the current window
+    wmctrl -c "Bitcoin Browser"
 
 # Placeholder for Bitcoin Core API call to fetch infromation based on Satoshi number [specified by programmer]
 
 # Placeholder to make API call for icon based on satoshi number
+ 
+# Path to the icon file
+icon_file="/path/to/icon.png"
+
 
 # Prompt the user to enter a website address, Satoshi number, or transaction ID
 read -p "Enter a Website Address, Satoshi Number, or Transaction ID: " input
