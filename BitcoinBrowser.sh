@@ -5,6 +5,19 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+# Placeholder for Bitcoin Core API call to fetch icon based on Satoshi number
+
+# Replace with your actual API call to retrieve the icon based on the Satoshi number
+satoshi_number="1234567890"
+icon_url=$(bitcoin_core_api_call "$satoshi_number")
+
+# Download the icon image file
+icon_file="/path/to/icon.png"
+download_file "$icon_url" "$icon_file"
+
+# Specify the directory where downloaded files will be stored
+output_dir="/path/to/output/directory"
+
 # Function to download a file
 download_file() {
     local url="$1"
@@ -23,24 +36,13 @@ download_file() {
     fi
 }
 
-# Placeholder for Bitcoin Core API call to fetch icon based on Satoshi number
-# Replace with your actual API call to retrieve the icon based on the Satoshi number
-satoshi_number="1234567890"
-icon_url=$(bitcoin_core_api_call "$satoshi_number")
-
-# Download the icon image file
-icon_file="/path/to/icon.png"
-download_file "$icon_url" "$icon_file"
-
-# Specify the directory where downloaded files will be stored
-output_dir="/path/to/output/directory"
 
 # Function to display the content in the browser window
 display_content() {
     local data="$1"
 
     # Placeholder for displaying the organized content (text and media files)
-    # Replace with your logic to organize and display the content
+    # Replace with logic to organize and display the content
     # You can use the data variable to access the fetched content
 
     # Example: Opening the content in the default web browser
