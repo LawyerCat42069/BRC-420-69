@@ -137,16 +137,23 @@ READER PROTOCOL:
 
 1. Operate in a secure sandbox environment with access to bash/python/java/any other needed coding libraries and a basic web browser (or maybe one day, BitcoinBrowser), other file readers, any other security protocol we can think of. Maybe the shell script could also be inscribed. 
 
-2. Always ensure provenance of parent/child pair, first check that parent is in an authorized wallet and that the satoshi numbers and file type metadata contained in both ordinals match the expected numbers and file types based on cross-referencing. If it does not match, display that "Ordinal cannot be displayed because it cannot be authenticated."  
+2. Always ensure provenance of parent/child pair, first check that parent is in an authorized wallet and that the satoshi numbers and file type metadata contained in both ordinals match the expected numbers and file types based on cross-referencing - compare txid/io to the child ordinal contents. If it does not match, delete file and display that "Ordinal cannot be displayed because it cannot be authenticated."  
 
 3. Default display for any encrypted/compressed Orindal is the collection image as specified in the BRC-420. After ensuring provenance, check for compressed file. If yes, check for pw lock. If locked, check BRC-420 for line containing encryption key. If none, prompt user for Encryption Key. 
 
-4.     Using Encryption Key, decrypt file password from metadata. Unlock file, check file type against parent ordinal metadata. If file type does not match, immediately terminate shell. 
+4. Using Encryption Key, decrypt file password from metadata. Unlock file, check file type against parent ordinal metadata. If file type does not match, clear directory and immediately terminate shell. 
 
-5.     Assuming file type matches, Check steganographically embedded metadata. If metadata does not match, immediately terminate shell.   
-10. Marketplaces, apps, websites, wallets and other readers could utilize BRC-69Decode+Embed to check parent Ordinal information for provenance first, then decryption key, (of numerous file types) using the (now public) key to decompress/retrieve/display the ordinals in a fully decentralized and permissionless way. [THIS IS NOT FUNCTIONAL YET!] The decoding script ideally long term will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. (Ideally that list is managed via largely distributed multisignature and contains multiple valid owner wallets, so that it can be passed on to a new owner quickly if need be. Perhaps that could be further decentralized but I'm not there yet.) If the file does not match the list of approved file types AND/OR does not exist in the BRC-420 metadata of the approved list of dapps, then the decoder app should immediately delete the file and self-terminate, requiring the end user to re-instigate the app. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. 
+5. Assuming file type matches, Check steganographically embedded metadata. If metadata does not match, clear directory and immediately terminate decoder.  
 
-The BRC-69 Omni Decode + Embed Function does this:
+6. Assuming metadata matches, perform any needed security checks, If the compressed file fails the security check, clear directory and terminate shell.  
+
+7. Extract/save the file to specified (temporary) directory for use, open appropriate reading application (ideally an authentic inscribed dapp), or opens the directory containing the downloaded file if no appropriate reader can be found within the shell. 
+ 
+8. Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner.  
+        
+The decoding script ideally long term will be written to process mutliple file types, but if it processes applications it could check them against an BRC-420 containing an approved list of secure dApp ordinals and file types before executing any script. (Ideally that list is managed via largely distributed multisignature and contains multiple valid owner wallets, so that it can be passed on to a new owner quickly if need be. Perhaps that could be further decentralized but I'm not there yet.) If the file does not match the list of approved file types AND/OR does not exist in the BRC-420 metadata of the approved list of dapps, then the decoder app should immediately delete the file and self-terminate, requiring the end user to re-instigate the app. This does create a point of centralization but nothing would preclude the existence of a decoder app that breaks this protocol. I just don't think that would be secure. 
+
+The BRC-69 Omni Decode + Embed Function does this currently:
 
 Uses the AES key to decrypt the two hashes. 
 Decodes the base64 strings into a BMP image and metadata.
@@ -154,6 +161,9 @@ Embeds metadata into the image using steganography.
 Saves the resulting image. 
 Writes the extracted metadata to a JSON file. 
 Steganographically embeds the metadata into the image. Saves that output.  
+
+This is outdated based on the protocol outlined above. Lots of this needs rewriting at this point. Might start fresh. 
+
 Dependencies
 This script depends on the following Python libraries: 
   base64, 
