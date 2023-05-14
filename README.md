@@ -88,7 +88,7 @@ The delayed reveal functionality allows for fair minting of ordinals to happen e
 
 Once inscribed, the parent inscription must remain in a designated owner wallet, or be sent to Satoshi's wallet to "renounce" the collection. This BRC-420 incription can be inscribed in an encrypted manner as well, to allow for less decentralized but more private decryption, or could even remain uninscribed to maintain more secrecy of the underlying inscription data (uninscribed "orphan" ordinals would also be appropriate for individual items not part of a collection). The privacy implications could be significant for any types of document that an individual might want inscribed onto the blockchain without it being publicly visible or known.
 
-INSCRIBER PROTOCOL:
+**INSCRIBER PROTOCOL:**
 
   1. Assemble Parent (BRC-420) Collection JSON with all desired metadata and files for the collection. 
   2. Identify target satoshi of parent ordinal using a satoshi indexer, add that information to BRC-420 and individual child metadata.  
@@ -103,7 +103,7 @@ INSCRIBER PROTOCOL:
   12. Inscribe BRC-420 JSON file onto target parent ordinal.  
   13. Ensure accuracy and validity of all metadata, send parent ordinal to satoshi's wallet if there is a desire to renounce the metadata. 
 
-READER PROTOCOL:
+**READER PROTOCOL:**
 
   1. Operate in a secure sandbox environment with access to bash/python/java/any other needed coding libraries and a basic web browser (or maybe one day, BitcoinBrowser), other file readers, any other security protocol we can think of. Maybe the shell script could also be inscribed. 
 
