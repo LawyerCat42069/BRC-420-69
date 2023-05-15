@@ -88,10 +88,13 @@ The child inscription (BRC-69) consists of the necessary metadata specified abov
 **Why Compression?**
 
 The significance of using compression is two-fold: It allows us to inscribe more bytes of information into a single inscription while reducing transaction fees, enabling significantly larger file inscriptions, and it also enables us to readily password protect the data in a way that is harder to externally discern without unlocking the file.
-
-If password protected, with the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, extract only the specified file type, and save it as the appropriate file type as designated in the BRC-420 in a sandbox environment used for display/ux. This could apply to a multitude of file types. So long as the process for ensuring provenance of the parent/child pair is legitimate, and a properly constructed environment is used by the sandbox application, the underlying files should be safe to extract and use in this way.
+ 
 
 SUB-NOTE: TESTING IS REQUIRED TO DETERMINE THE EXTENT TO WHICH THESE BYTES CAN BE EMBEDDED WITHOUT ALTERING COMPRESSED FILE CONTENTS. THE SECURITY OF OF ANY ENCRYPTED PASSWORD IS IN LARGE PART DEPENDENT ON THE LENGTH OF THE ENCRYPTED PASSWORD. PASSWORDS OF FILES ON THE BLOCKCHAIN ARE SUSCEPTIBLE TO BRUTE FORCE ATTACKS, SO ANY EFFORTS AT TRUE SECRECY MUST TAKE THIS INTO ACCOUNT.
+
+**Why Ciphers**
+
+If password protected, with the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, unlock the file or zip, extract only the specified file type, and save it as the appropriate file type (as designated in the BRC-420) in a sandbox environment used for display/ux. This could apply to a multitude of file types. So long as the process for ensuring provenance of the parent/child pair is legitimate, and a properly constructed environment is used by the sandbox application, the underlying files should be safe to extract and use in this way.
 
 The delayed reveal functionality allows for fair minting of ordinals to happen entirely on the Bitcoin blockchain. Ordinals can be listed on centralized marketplaces sight unseen, and they can be purchased there and revealed (upon parent inscription) after sellout. Only the holder of the parent information (and others with access to that information) would know the underlying files.
 
