@@ -77,13 +77,17 @@ What if most of our Ordinals looked like this:
          
 BRC-420–69 is a new protocol for Ordinal Inscriptions on the Bitcoin blockchain. This protocol provides a method of storing files with embedded metadata as an Ordinal that is potentially private, immutable, secure, takes up less block space, allows for delayed reveals of ordinals after minting, and contains verifiable metadata associated between the child file and the parent collection metadata — ensuring long term provenance. This is also a standard that allows for onchain indexing between the parent and children ordinals, allowing for fully permissionless Ordinals marketplace protocols that still authenticate & display collection information and metadata.
 
-Infrastructure is needed for all of this to work in a seamless way, but I have started planning that and with my limited skills I am putting together parts of the whole.
+**The 420**
 
 The protocol involves a parent inscription (BRC-420) that contains a public JSON file. This JSON file indexes all of the child Ordinals by a combination of transaction ID and first-output as the most immutable data point for the indexing of Ordinals, and describes all of their other metadata, collection information, an AES encryption key [if applicable] of the password for the compressed ordinal on the child satoshi (if compressed), and the collection owner wallet(s). Credit to DAnTer for teaching me how this is immutable & can be reproduced with API calls.
 
+**The 69**
+
 The child inscription (BRC-69) consists of the necessary metadata specified above steganogrpahically embedded into both the file itself and a compressed/zip file (if used), depending on the needs and desires of the inscriber. Because the transaction ID and first output cannot be known for the parent at the time of the child inscription creation, children will cross-reference the parent Ordinal by satoshi number & genesis txid/io as the best available data point for the indexing within children ordinals. (NOTE: Bitcoin Core API does not currently support RPC to call the parent satoshi by number, onchain automation may require this. In the meantime a collection can only be validated onchain if the collection owner submits it to a marketplace. Maybe that is fine, and could simplify the protocol. )
 
-The significance of using compression is two-fold: It allows us to inscribe more bytes of information into a single inscription, enabling significantly larger file inscriptions, and it also enables us to readily password protect the data in a way that is harder to externally discern without unlocking the file.
+**Why Compression?**
+
+The significance of using compression is two-fold: It allows us to inscribe more bytes of information into a single inscription while reducing transaction fees, enabling significantly larger file inscriptions, and it also enables us to readily password protect the data in a way that is harder to externally discern without unlocking the file.
 
 If password protected, with the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, extract only the specified file type, and save it as the appropriate file type as designated in the BRC-420 in a sandbox environment used for display/ux. This could apply to a multitude of file types. So long as the process for ensuring provenance of the parent/child pair is legitimate, and a properly constructed environment is used by the sandbox application, the underlying files should be safe to extract and use in this way.
 
@@ -132,7 +136,7 @@ The next thing I would add is that this protocol is a tool with potential for po
 
 Finally, a weakness realized late is that it will be challenging for a Child Ordinal to reference back to the parent satoshi in an immutable way (thus one that can be supported by BTC Core API Calls). This is not fatal and provides for parent owner control over decentralized marketplace protocols which is perhaps more desirable. The wallet address reference on the Child *is* immutable, so it would not lack assurances of provenance or security. In many ways on the blockchain, provenance IS security.
 
-**Opportunities:** It’s a wide open field right now with Ordinals just becoming popular. Now is the time to set a strong standard that takes into account security, decentralized protocols (onchain indexing), and other standards to ensure secure, optimal use cases for the technology moving forward. I think the time is right to publish some complete thoughts and keep moving the conversation forward.
+**Opportunities:** It’s a wide open field right now with Ordinals just becoming popular. Now is the time to set a strong standard that takes into account security, decentralized protocols (onchain indexing), and other standards to ensure secure, optimal use cases for the technology moving forward. Transaction fees are also going through the roof, prompting a need for compression. But compression is only safe with provenance. I think the time is right to publish some complete thoughts and keep moving the conversation forward.
 
 **Threats:** Abuse of the protocol leading to a bad reputation is my primary concern here. Malware or other malicious/illegal files being inscribed and attempting to fool the protocol to create security or other threats to end users or the blockchain itself. Aside from that, the threats to this protocol are the same as the threats to Bitcoin itself.
 
