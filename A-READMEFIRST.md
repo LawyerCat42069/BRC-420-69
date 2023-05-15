@@ -180,7 +180,7 @@ Possibly, definitely for some — but the complicated aspects can be automated a
 
 The BRC-420/69 standard provides a robust method for taking file collections with associated metadata and inscribing them on the Bitcoin blockchain, potentially in a cryptographically secure manner, and ultimately decompressing & decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. The potential for this idea to expand to include a variety of use cases, I think, is significant. As many use cases as there are for a more secure & private internet, essentially.
   
-Dependencies
+**Dependencies**
 This script depends on the following Python libraries: 
   base64, 
   json, 
@@ -194,7 +194,7 @@ This script depends on the following Python libraries:
 
 **Conclusion**
 
-The BRC-420/69 standard provides a robust method for taking file collections with associated metadata and inscribing them on the Bitcoin blockchain, potentially in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. 
+The BRC-420/69 standard provides a robust method for taking files with associated metadata and inscribing them on the Bitcoin blockchain, potentially in a cryptographically secure manner, and ultimately decoding those inscriptions publicly with the inscription of the encryption key as a part of the parent ordinal. This allows for unique, secure, private, identifiable, and verifiable inscriptions in the form of ordinals on the blockchain. There is a lot of potential for this to go further in support of decentralized computing and web development. 
 
 FOR ORDICORD COMPETITTION: I TOTALLY REDEFINED WHAT I WANTED TO DO OVER THE LAST 24-HOURS, I THINK THIS IS FINALLY A GOOD STARTING PLACE. 
 
