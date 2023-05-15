@@ -90,31 +90,32 @@ The delayed reveal functionality allows for fair minting of ordinals to happen e
 
 Once inscribed, the parent inscription must remain in a designated owner wallet, or be sent to Satoshi’s wallet to “renounce” the collection. This BRC-420 inscription can technically be inscribed in an encrypted manner as well, to allow for less decentralized but more private decryption, or could even remain uninscribed to maintain more secrecy of the underlying inscription data, but those are not supported by this protocol. However the privacy implications could be significant for any types of document that an individual might want inscribed onto the blockchain without it being publicly visible or known.
 
-INSCRIBER PROTOCOL:
-Assemble Parent (BRC-420) Collection JSON with all desired metadata and files for the collection.
-Identify target satoshi of parent ordinal using a satoshi indexer, add that information to BRC-420 and individual child metadata.
-OPTIONAL: Choose a secure password for compressed files (delayed reveal, secrecy/privacy).
-OPTIONAL: Encrypt password using AES Encryption, note encryption key in BRC-420 table. Insert cipher into child ordinal metadata table.
-Steganographically embed the metadata into the files (automated ideally).
-OPTIONAL: Compress the Child Ordinal files.
-OPTIONAL: Lock the Zip file using the chosen password.
-OPTIONAL: Then, you will need to steganogrpahically embed the Child Ordinal metadata onto the compressed files (also automated, same process).
-Inscribe all of the child ordinal files first, noting each satoshi number and txid/io.
-Complete the BRC-420 metadata table with the information from step 9, ensure completeness of metadata.
-Inscribe BRC-420 JSON file onto target parent ordinal.
-Ensure accuracy and validity of all metadata, send parent ordinal to Satoshi’s wallet if there is a desire to renounce the metadata.
-Make marketplace aware by sending txid/io (or the file) to marketplace.
-READER PROTOCOL:
-If centralized — review BRC-420 and child ordinals to ensure security and compatibility with marketplace standards.
-If decentralized — Operate in a secure sandbox environment with access to bash/python/java/any other needed coding libraries and a basic web browser (or maybe one day, BitcoinBrowser), other file readers, any other security protocol deemed needed. Maybe the shell script could also be inscribed. Receive BRC-420 from owner wallet and store the data.
-Always ensure provenance of parent/child pair, first check that parent is in an authorized wallet and that the satoshi numbers and file type metadata contained in both ordinals match the expected numbers and file types based on cross-referencing — compare txid/io to the child ordinal contents. If it does not match, delete file and display that “Ordinal cannot be displayed because it cannot be authenticated.”
-Default display for any encrypted/compressed Orindal is the collection image as specified in the BRC-420. After ensuring provenance, check for compressed file. If yes, check for pw lock. If locked, check BRC-420 for line containing encryption key. If none, prompt user for Encryption Key.
-Using Encryption Key, decrypt file password from metadata. Unlock file, check file type against parent ordinal metadata. If file type does not match, clear directory and immediately terminate shell.
-Assuming file type matches, Check steganographically embedded metadata. If metadata does not match, clear directory and immediately terminate decoder.
-Assuming metadata matches, perform any needed security checks, If the compressed file fails the security check, clear directory and terminate shell.
-Extract/save the file to specified (temporary) directory for use, open appropriate reading application (ideally an authentic inscribed dapp), or opens the directory containing the downloaded file if no appropriate reader can be found within the shell. HOWEVER: if designated by the BRC-420 as software, the application should instead call the most current txid/io in order to call the most recent update.
-Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner.
-When application is terminated, optionally clear cache as well.
+**INSCRIBER PROTOCOL:**
+   1. Assemble Parent (BRC-420) Collection JSON with all desired metadata and files for the collection.
+   2. Identify target satoshi of parent ordinal using a satoshi indexer, add that information to BRC-420 and individual child metadata.
+   3. OPTIONAL: Choose a secure password for compressed files (delayed reveal, secrecy/privacy).
+   4. OPTIONAL: Encrypt password using AES Encryption, note encryption key in BRC-420 table. Insert cipher into child ordinal metadata table.
+   5. Steganographically embed the metadata into the files (automated ideally).
+   6. OPTIONAL: Compress the Child Ordinal files.
+   7. OPTIONAL: Lock the Zip file using the chosen password.
+   8. OPTIONAL: Then, you will need to steganogrpahically embed the Child Ordinal metadata onto the compressed files (also automated, same process).
+   9. Inscribe all of the child ordinal files first, noting each satoshi number and txid/io.
+   10. Complete the BRC-420 metadata table with the information from step above, ensure completeness of metadata.
+   11. Inscribe BRC-420 JSON file onto target parent ordinal.
+   12. Ensure accuracy and validity of all metadata, send parent ordinal to Satoshi’s wallet if there is a desire to renounce the metadata.
+   13. Make marketplace aware by sending txid/io (or the file) to marketplace, depending on its protocol. 
+
+**READER PROTOCOL:**
+   1. If centralized — review BRC-420 and child ordinals to ensure security and compatibility with marketplace standards.
+   2. If decentralized — Operate in a secure sandbox environment with access to bash/python/java/any other needed coding libraries and a basic web browser (or maybe one day, BitcoinBrowser), other file readers, any other security protocol deemed needed. Maybe the shell script could also be inscribed. Receive BRC-420 from owner wallet and store the data.
+   3. Always ensure provenance of parent/child pair, first check that parent is in an authorized wallet and that the satoshi numbers and file type metadata contained in both ordinals match the expected numbers and file types based on cross-referencing — compare txid/io to the child ordinal contents. If it does not match, delete file and display that “Ordinal cannot be displayed because it cannot be authenticated.”
+   4. Default display for any encrypted/compressed Orindal is the collection image as specified in the BRC-420. After ensuring provenance, check for compressed file. If yes, check for pw lock. If locked, check BRC-420 for line containing encryption key. If none, prompt user for Encryption Key.
+   5. Using Encryption Key, decrypt file password from metadata. Unlock file, check file type against parent ordinal metadata. If file type does not match, clear directory and immediately terminate shell.
+   6. Assuming file type matches, Check steganographically embedded metadata. If metadata does not match, clear directory and immediately terminate decoder.
+   7. Assuming metadata matches, perform any needed security checks, If the compressed file fails the security check, clear directory and terminate shell.
+   8. Extract/save the file to specified (temporary) directory for use, open appropriate reading application (ideally an authentic inscribed dapp), or opens the directory containing the downloaded file if no appropriate reader can be found within the shell. HOWEVER: if designated by the BRC-420 as software, the application should instead call the most current txid/io in order to call the most recent update.
+   9. Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner.
+   10. When application is terminated, optionally clear cache as well.
 
 **SWOT ANALYSIS** 
 
