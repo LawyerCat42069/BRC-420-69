@@ -1,10 +1,17 @@
-**BRC-420-69 Ordinal Inscriptions:** 
+**BRC-420-69 Ordinal Inscriptions:**
+
+TL:DR
+
+The BRC-420/69 standard opens up possibilities for Ordinal authentication and a web3 environment that relies less on web2 infrastructure and enables various applications, including decentralized readers and browsers, inscribed APIs, and even a Bitcoin Computer.
+
 
 **A Standard for Secure File Storage, Authentication, and Management on the Bitcoin Blockchain**
  
 What if most of our Ordinals looked like this:
 
     BRC-69
+     
+    BRC-741 wallet address:
   
     Collection Name: Collection of Ordinals
 
@@ -18,7 +25,7 @@ What if most of our Ordinals looked like this:
    
       Parent Satoshi Number: XXXXXXXXXXXXXXXXX
       
-      Parent satoshi genesis output txid/io: 
+      BRC-420 txid/io: 
       
     
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
@@ -42,7 +49,9 @@ What if most of our Ordinals looked like this:
  The Parent Ordinal would be a JSON consisting of the following metadata:
         
        BRC-420  
-
+       
+         BRC-741 wallet address:  
+         
          Collection Name: Collection of Ordinals
         
          Collection Description: This is a collection of Ordinals.
@@ -92,7 +101,7 @@ The significance of using compression is two-fold: It allows us to inscribe more
 
 SUB-NOTE: TESTING IS REQUIRED TO DETERMINE THE EXTENT TO WHICH THESE BYTES CAN BE EMBEDDED WITHOUT ALTERING COMPRESSED FILE CONTENTS. THE SECURITY OF OF ANY ENCRYPTED PASSWORD IS IN LARGE PART DEPENDENT ON THE LENGTH OF THE ENCRYPTED PASSWORD. PASSWORDS OF FILES ON THE BLOCKCHAIN ARE SUSCEPTIBLE TO BRUTE FORCE ATTACKS, SO ANY EFFORTS AT TRUE SECRECY MUST TAKE THIS INTO ACCOUNT.
 
-**Why Ciphers**
+**Why Ciphers?**
 
 If password protected, with the key you can decrypt the cipher, which gives you the password for the compressed file. The strings are further decoded into file and metadata, and the metadata is then steganographically embedded into the output file. The vision is that an ordinals reader will automatically pull the key from the BRC-420, decrypt the cipher, unlock the file or zip, extract only the specified file type, and save it as the appropriate file type (as designated in the BRC-420) in a sandbox environment used for display/ux. This could apply to a multitude of file types. So long as the process for ensuring provenance of the parent/child pair is legitimate, and a properly constructed environment is used by the sandbox application, the underlying files should be safe to extract and use in this way.
 
@@ -127,6 +136,9 @@ Once inscribed, the parent inscription must remain in a designated owner wallet,
    9. Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner.
    10. When application is terminated, optionally clear cache as well.
 
+**How onchain indexing?**
+By establishing a dapp and token inscription that monitors the blockchain and keeps an onchain index of all BRC-420 inscriptions from the moment of their appearance on the blockchain, (Token designation BRC-741), along with their genesis txid/io, we can onchain index via triangulation between the child satoshi txid/io, .  
+  
 **SWOT ANALYSIS** 
 
 **Stengths:** I believe these are fairly indicated above. I think the greatest strength lies in the potential of onchain indexing. The compression and cryptography we can take or leave as desired. The onchain computing/web stuff is neat too. 
