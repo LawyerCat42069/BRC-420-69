@@ -18,6 +18,8 @@ What if most of our Ordinals looked like this:
    
       Parent Satoshi Number: XXXXXXXXXXXXXXXXX
       
+      Parent satoshi genesis output txid/io: 
+      
     
     Child Satoshi Number:XXXXXXXXXXXXXXXXX
     
