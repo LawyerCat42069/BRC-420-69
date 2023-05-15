@@ -4,7 +4,7 @@ If one could efficiently calculate the formula, would it be a useful way to comp
 
 **ChatGPT**
 
-If one could efficiently calculate the most concise formula to represent binary data as a literal ineger, it could potentially be a useful method for compressing binary data. The resulting formula would provide a compact representation of the binary data, allowing for storage or transmission with reduced size compared to the original binary representation.
+If one could efficiently calculate the most concise formula to represent binary data [added: as a literal integer], it could potentially be a useful method for compressing binary data. The resulting formula would provide a compact representation of the binary data, allowing for storage or transmission with reduced size compared to the original binary representation.
 
 However, it's important to consider a few factors:
 
