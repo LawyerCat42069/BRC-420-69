@@ -136,9 +136,12 @@ Once inscribed, the parent inscription must remain in a designated owner wallet,
    9. Reading application picks up on and displays all Child Ordinal metadata alongside the Child Ordinal file in an aesthetically pleasing manner.
    10. When application is terminated, optionally clear cache as well.
 
-**How onchain indexing?**
-By establishing a dapp and token inscription that monitors the blockchain and keeps an onchain index of all BRC-420 inscriptions from the moment of their appearance on the blockchain, (Token designation BRC-741), along with their genesis txid/io, we can onchain index via triangulation between the child satoshi txid/io, .  
-  
+**How Onchain Indexing?**
+ 
+By establishing a dapp and token inscription system that monitors the blockchain and keeps an onchain index of all BRC-420 inscriptions from the moment of their appearance on the blockchain by inscribing them in tables kept/sent to & in a single wallet, (Token designation BRC-741), along with their genesis txid/io and inscription txid/io, we can onchain index via triangulation between the child satoshi txid/io, the parent genesis txid/io, and the inscribed tables contained in the BRC-741 wallet address. The wallet address itself is the third immutable point, and with proper dApp structure the data inscribed. We can establish fully onchain authentication of Ordinals for a variety of use cases using two immutable points of data and inscribed tables all found in the same wallet.
+
+Ideally this dApp is run alongside Bitcoin Core by many so that there is decentralized hosting. The keys to the wallet used by the dapp should be cryptographically generated upon its launch and be known only to the dapp. The dapp can send updated tables or new tables as needed (either on a time-based interval or when a new full table is created) to dApp users by generating the new table as read-only output in their specified directory, and the inscription of those updated tables can be handled on a regular basis through other dapp protocols (multisig crowdfunding of the inscription of the new table, perhaps). Theoretically, after inscription, or once “perfect” operation has been achieved, the dApp inscription itself could be sent to the BRC-741 wallet to become fully autonomous and self-governing.
+
 **SWOT ANALYSIS** 
 
 **Stengths:** I believe these are fairly indicated above. I think the greatest strength lies in the potential of onchain indexing. The compression and cryptography we can take or leave as desired. The onchain computing/web stuff is neat too. 
@@ -162,6 +165,8 @@ I look forward to seeing what others have to say/think about these ideas.
 An actual web3. One that does not need to depend on web2 infrastructure other than the series of tubes itself to exist in any way, shape or form. Let’s look at it from the 30,000 foot perspective:
 
 Any file that can be compressed and inscribed can be authenticated and viewed using information that is entirely onchain. All you need is the key (if needed) and the proper application to use the file, whatever it may be. You can put dapp pieces (including such a reader) into files that contain executable code and cross-reference them with each other, daisy chain them, using inscription metadata. You could also inscribe compressed/ protected webpages — securing your HTML code with the power of strong password security and the AES/MD5 hash (really, TLS is an option here too). Webpages would likely require a different protocol entirely with similar provenance standards. You can inscribe html that calls to other inscriptions to display media or execute dapps, and can only be decompressed and read with the encryption key, which can be public or private. And once it is on the blockchain, it’s there forever. The html can also call to data offchain. Permanent webhosting on the bitcoin blockchain and on your satoshis. Updating the website and hosting that only costs you inscription fees, and very small ones at that because HTML does not take up huge amounts of byte space.
+
+**Bitcoin Browser, Bitcoin Computer?**
 
 You could make it such that a terminal with bash, python & java with a full compliment, bitcoin core (w/ API), inscription wallets, and an internet connection is capable of executing all of this in a sandbox environment with an amnesiac cache (inscribable). Software updates can be pushed by re-inscribing on the relevant satoshi (this may require a slightly different standard to manage for top-down ordinal relationships like software updates, but I have contemplated that some here).
 
